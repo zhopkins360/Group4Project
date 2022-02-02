@@ -9,8 +9,8 @@ using UnityEngine;
 
 public class Recycle : MonoBehaviour
 {
-    //z cordinate for when to move(zBack) and how far(recycleDist) - conrad
-    public float zBack, recycleDist;
+    //z cordinate for when to move(zBack) and how far(zFront) - conrad
+    public float zBack, zFront;
 
     //prefab of obstacle to be created when recycled
     public GameObject prefab;
@@ -21,17 +21,22 @@ public class Recycle : MonoBehaviour
         //if object is beyond xBack, reinstantiate it at the start
         if(transform.position.z < zBack)
         {
-            //randomize what lane the obstacle appears in
-            int laneIndex = Random.Range(-2, 2) * 2;
-
-            //create position to create new copy of prefab
-            Vector3 recyclePosition= new Vector3(laneIndex, 0.3f, transform.position.z + recycleDist);
-
-            //create new obstacle with no roatation in case of collision
-            Instantiate(prefab, recyclePosition, new Quaternion());
-
-            //destroy self
-            Destroy(gameObject);
+            recycle();
         }
+    }
+
+    public void recycle()
+    {
+        //randomize what lane the obstacle appears in
+        int laneIndex = Random.Range(-2, 2) * 2;
+
+        //create position to create new copy of prefab
+        Vector3 recyclePosition = new Vector3(laneIndex, 0.3f, zFront);
+
+        //create new obstacle with no roatation in case of collision
+        Instantiate(prefab, recyclePosition, new Quaternion());
+
+        //destroy self
+        Destroy(gameObject);
     }
 }

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8520222959266136664}
   - component: {fileID: 3417586361059139810}
   - component: {fileID: 2976852643216924039}
+  - component: {fileID: 114063215413027440}
   m_Layer: 0
   m_Name: ObstacleCarAlt
   m_TagString: Untagged
@@ -136,5 +137,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zBack: -26
-  recycleDist: 50
+  zFront: 30
   prefab: {fileID: 6076226274254493470, guid: 39a5aec2eb336c24f887276739e21c2c, type: 3}
+--- !u!114 &114063215413027440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6253061111000839652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e2ffc75688e15d47b6434b691d50afa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
