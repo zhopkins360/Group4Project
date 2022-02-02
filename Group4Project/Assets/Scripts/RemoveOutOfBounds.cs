@@ -14,11 +14,7 @@ public class RemoveOutOfBounds : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Mathf.Abs(transform.position.y - 0.3f) > 0.1)
-        {
-            rec.recycle();
-        }
-        else if (Mathf.Abs(transform.position.x) > 4)
+        if (Mathf.Abs(transform.position.x) > 4)
         {
             rec.recycle();
         }
