@@ -13,7 +13,7 @@ public class Recycle : MonoBehaviour
     public float zBack, zFront;
 
     //prefab of obstacle to be created when recycled
-    public GameObject prefab;
+    public GameObject[] prefab;
 
     // Update is called once per frame
     void Update()
@@ -27,14 +27,14 @@ public class Recycle : MonoBehaviour
 
     public void recycle()
     {
-        //randomize what lane the obstacle appears in
-        int laneIndex = Random.Range(-2, 2) * 2;
+        //randomize what one of 5 lanes the obstacle appears in
+        int laneIndex = Random.Range(-2,3)*2;
 
         //create position to create new copy of prefab
-        Vector3 recyclePosition = new Vector3(laneIndex, 0.3f, zFront);
+        Vector3 recyclePosition = new Vector3(laneIndex, 0.1f, zFront);
 
         //create new obstacle with no roatation in case of collision
-        Instantiate(prefab, recyclePosition, new Quaternion());
+        Instantiate(prefab[Random.Range(0, prefab.Length)], recyclePosition, new Quaternion());
 
         //destroy self
         Destroy(gameObject);

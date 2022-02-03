@@ -12,8 +12,15 @@ public class PlayerControl : MonoBehaviour
     //veriable for input, max speed, and limit of +/- x
     public float horizontalInput, speed, xLimit;
 
+    public GameObject[] wheels;
+
     //for debug below
-    public GameObject prefab;
+    public GameObject[] prefab;
+
+    void start()
+    {
+
+    }
 
     // Update is called once per frame
     void Update()
@@ -25,7 +32,13 @@ public class PlayerControl : MonoBehaviour
         transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed,Space.World);
 
         //Rotate on move
-        transform.rotation = Quaternion.Euler(0, horizontalInput * 25, 0);
+        transform.rotation = Quaternion.Euler(0, horizontalInput * 20, 0);
+
+        //rotate players wheels (I know this is practically pointless)
+        for (int i = 0; i < wheels.Length; i++)
+        {
+            wheels[i].transform.Rotate(Vector3.right * speed * 270 * Time.deltaTime);
+        }
 
         //keep player bounded
         if (transform.position.x < -xLimit || transform.position.x > xLimit)
@@ -36,7 +49,7 @@ public class PlayerControl : MonoBehaviour
         //Debug summon cars
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(prefab, transform.position - new Vector3(0, 0, 10), new Quaternion());
+            Instantiate(prefab[Random.Range(0,prefab.Length)], transform.position - new Vector3(0, 0, 10), new Quaternion());
         }
     }
 }
