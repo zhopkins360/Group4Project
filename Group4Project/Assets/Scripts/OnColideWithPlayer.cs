@@ -1,13 +1,36 @@
-﻿using System.Collections;
+﻿/*
+ * Group 4
+ * CIS 350:01
+ * Manage collision with player
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class OnColideWithPlayer : MonoBehaviour
 {
+    public LevelManager level;
 
-    // Update is called once per frame
-    void Update()
+    public Recycle rec;
+
+    private void Start()
     {
-        
+        //gets the script to recycle and reference level variables
+        rec = gameObject.GetComponent<Recycle>();
+        level = GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelManager>();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        //if collide with the player
+        if (other.tag == "Player")
+        {
+            //damage player
+            level.damage();
+
+            //TODO destruction effects
+
+            rec.recycle();
+        }
     }
 }

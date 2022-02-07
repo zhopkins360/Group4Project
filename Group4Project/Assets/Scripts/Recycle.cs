@@ -1,7 +1,7 @@
 ﻿/*
  * group 4
  * 2/2/22
- * recycles objects that go off screen
+ * recycles objects
  */
 using System.Collections;
 using System.Collections.Generic;
