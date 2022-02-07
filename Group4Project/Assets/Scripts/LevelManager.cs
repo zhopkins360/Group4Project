@@ -29,7 +29,7 @@ public class LevelManager : MonoBehaviour
             gameOver = true;
         }
 
-        while (!gameOver)
+        if (!gameOver)
         {
             timeLeft = timeLeft - Time.deltaTime;
         }
