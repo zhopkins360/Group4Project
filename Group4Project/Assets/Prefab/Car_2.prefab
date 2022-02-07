@@ -249,7 +249,7 @@ GameObject:
   - component: {fileID: 114798185171617750}
   m_Layer: 0
   m_Name: Car_2
-  m_TagString: Untagged
+  m_TagString: MovingObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -349,7 +349,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  turning: 2
 --- !u!114 &114798185171617750
 MonoBehaviour:
   m_ObjectHideFlags: 0

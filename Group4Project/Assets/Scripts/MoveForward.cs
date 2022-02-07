@@ -12,11 +12,21 @@ public class MoveForward : MonoBehaviour
     //speed of movement
     public float speed;
 
+    public LevelManager level;
+
+    private void Start()
+    {
+        level = GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelManager>();
+    }
+
     // Update is called once per frame
     void Update()
     {
-        //move car speed units per second towards the back, partially in worldspace and partially relevant to object, in order to veer in a more pleasing way
-        transform.Translate(Vector3.back * speed*2 * Time.deltaTime,Space.World);
-        transform.Translate(Vector3.forward * speed * Time.deltaTime,Space.Self);
+        if (!level.gameOver)
+        {
+            //move car speed units per second towards the back, partially in worldspace and partially relevant to object, in order to veer in a more pleasing way
+            transform.Translate(Vector3.back * speed * 2 * Time.deltaTime, Space.World);
+            transform.Translate(Vector3.forward * speed * Time.deltaTime, Space.Self);
+        }
     }
 }

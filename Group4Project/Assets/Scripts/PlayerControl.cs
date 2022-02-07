@@ -11,17 +11,17 @@ public class PlayerControl : MonoBehaviour
 {
     //veriable for input, max speed, and limit of +/- x
     public float horizontalInput, speed, xLimit;
+    
+    public GameObject laneDiv;
 
     public GameObject[] wheels;
-
-    public GameObject laneDiv;
 
     //for debug below
     public GameObject[] prefab;
 
     private void Start()
     {
-        InvokeRepeating("laneDivider", 0, 0.2f);
+
     }
 
     // Update is called once per frame
@@ -52,14 +52,6 @@ public class PlayerControl : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Instantiate(prefab[Random.Range(0,prefab.Length)], transform.position - new Vector3(0, 0, 10), new Quaternion());
-        }
-    }
-
-    void laneDivider()
-    {
-        for (int i = -3; i < 4; i += 2)
-        {
-            Instantiate(laneDiv, new Vector3(i, -0.04f, 20), new Quaternion());
         }
     }
 }
