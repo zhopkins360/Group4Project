@@ -86,11 +86,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2011272809800819390}
+  - component: {fileID: 65618618123135718}
+  - component: {fileID: 54555186183861264}
   - component: {fileID: 992508401394640953}
   - component: {fileID: 1323445428745581817}
   - component: {fileID: 4525179426080062326}
-  - component: {fileID: 54555186183861264}
-  - component: {fileID: 65618618123135718}
+  - component: {fileID: 114713381540413470}
   m_Layer: 0
   m_Name: Bus_1
   m_TagString: Untagged
@@ -117,6 +118,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &65618618123135718
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008882127269439634}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.293731, y: 1.1948528, z: 4.0746903}
+  m_Center: {x: 0, y: 0.5967679, z: 0}
+--- !u!54 &54555186183861264
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008882127269439634}
+  serializedVersion: 2
+  m_Mass: 500
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!114 &992508401394640953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,35 +195,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   turning: 2
---- !u!54 &54555186183861264
-Rigidbody:
+--- !u!114 &114713381540413470
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2008882127269439634}
-  serializedVersion: 2
-  m_Mass: 500
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!65 &65618618123135718
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2008882127269439634}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.293731, y: 1.1948528, z: 4.0746903}
-  m_Center: {x: 0, y: 0.5967679, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f43c471df3eb8c42b02958bc0048abf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2008889571183028802
 GameObject:
   m_ObjectHideFlags: 0
