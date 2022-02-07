@@ -31,7 +31,7 @@ public class Recycle : MonoBehaviour
         int laneIndex = Random.Range(-2,3)*2;
 
         //create position to create new copy of prefab
-        Vector3 recyclePosition = new Vector3(laneIndex, 0.1f, zFront);
+        Vector3 recyclePosition = new Vector3(laneIndex, 0, zFront);
 
         //create new obstacle with no roatation in case of collision
         Instantiate(prefab[Random.Range(0, prefab.Length)], recyclePosition, new Quaternion());
