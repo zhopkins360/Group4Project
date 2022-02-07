@@ -31,7 +31,7 @@ public class LevelManager : MonoBehaviour
 
         while (!gameOver)
         {
-            timeLeft -= Time.deltaTime;
+            timeLeft = timeLeft - Time.deltaTime;
         }
     }
 

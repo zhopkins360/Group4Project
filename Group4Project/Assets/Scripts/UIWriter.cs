@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class UIWriter : MonoBehaviour
 {
-    private Text textBox;
+    public Text textBox;
 
-    private LevelManager level;
+    public LevelManager level;
 
     // Start is called before the first frame update
     void Start()
@@ -19,15 +19,15 @@ public class UIWriter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        textBox.text = "Time left: " + level.timeLeft.ToString("2f") + "\n";
+        textBox.text = "Time left: " + level.timeLeft.ToString("F2") + "\n";
 
         for (int i = 0; i < level.health; i++)
         {
-            textBox.text += "<color ff0000>❤</color>";
+            textBox.text += "<color=#ff0000ff>❤</color>";
         }
         for (int i = level.health; i < level.maxHealth; i++)
         {
-            textBox.text += "<color bb0000>❤</color>";
+            textBox.text += "<color=#6b0000ff>❤</color>";
         }
     }
 }
