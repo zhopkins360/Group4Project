@@ -11,8 +11,6 @@ public class PlayerControl : MonoBehaviour
 {
     //veriable for input, max speed, and limit of +/- x
     public float horizontalInput, speed, xLimit;
-    
-    public GameObject laneDiv;
 
     public GameObject[] wheels;
 
