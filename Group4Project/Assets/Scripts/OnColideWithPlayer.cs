@@ -11,12 +11,9 @@ public class OnColideWithPlayer : MonoBehaviour
 {
     public LevelManager level;
 
-    public Recycle rec;
-
     private void Start()
     {
         //gets the script to recycle and reference level variables
-        rec = gameObject.GetComponent<Recycle>();
         level = GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelManager>();
     }
 
@@ -30,7 +27,7 @@ public class OnColideWithPlayer : MonoBehaviour
 
             //TODO destruction effects
 
-            rec.recycle();
+            Destroy(gameObject);
         }
     }
 }
