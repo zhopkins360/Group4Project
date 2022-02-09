@@ -22,7 +22,7 @@ public class RemoveOutOfBounds : MonoBehaviour
     {
         if (Mathf.Abs(transform.position.x) > 4.5 || transform.position.y > .5)
         {
-            Destroy(gameObject);
+            rec.recycle();
         }
     }
 }
