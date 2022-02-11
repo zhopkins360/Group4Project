@@ -8,15 +8,21 @@ public class BackgroundCycle : MonoBehaviour
     private float repeatWidth;
     public float speed;
 
+    private LevelManager level;
+
     private void Start()
     {
+        level = GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelManager>();
         startPos = transform.position; // Establish the default starting position 
         repeatWidth = 10;
     }
 
     private void Update()
     {
-        transform.Translate(Vector3.back * speed * Time.deltaTime);
+        if (!level.gameOver)
+        {
+            transform.Translate(Vector3.back * speed * Time.deltaTime);
+        }
 
         // If background moves left by its repeat width, move it back to start position
         if (transform.position.z < startPos.x - repeatWidth)

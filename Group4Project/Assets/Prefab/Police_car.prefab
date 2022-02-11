@@ -88,7 +88,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4025888126523594201}
   - component: {fileID: 65535688761294710}
-  - component: {fileID: 54693825179105292}
+  - component: {fileID: 54730185497039570}
   - component: {fileID: 1689041335501256206}
   - component: {fileID: 7520768945725365200}
   - component: {fileID: 8479240727368755385}
@@ -132,7 +132,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0617554, y: 0.71063805, z: 2.3874762}
   m_Center: {x: 0, y: 0.3847766, z: 0}
---- !u!54 &54693825179105292
+--- !u!54 &54730185497039570
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,10 +143,10 @@ Rigidbody:
   m_Mass: 500
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!114 &1689041335501256206
 MonoBehaviour:
@@ -195,6 +195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  level: {fileID: 0}
 --- !u!114 &114807590429897620
 MonoBehaviour:
   m_ObjectHideFlags: 0

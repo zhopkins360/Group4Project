@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 5070414881900541540}
   - component: {fileID: 5070414881903965764}
   - component: {fileID: 5070414881902834820}
-  - component: {fileID: 5070414881893636484}
+  - component: {fileID: 114680674967607306}
+  - component: {fileID: 114421596479091108}
   m_Layer: 0
   m_Name: sign_1.003
   m_TagString: Untagged
@@ -79,22 +80,29 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!95 &5070414881893636484
-Animator:
-  serializedVersion: 3
+--- !u!114 &114680674967607306
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5070414881900898884}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 153f4f1a90ebcdc4ea8eabffcc10de17, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df9879d0e3d13b24dbb3b9c4880c8fd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 60
+  level: {fileID: 0}
+--- !u!114 &114421596479091108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5070414881900898884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d3aa597e4bf9a84597b4e14f516a06d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

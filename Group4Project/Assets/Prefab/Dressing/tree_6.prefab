@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 2756869878271494545}
   - component: {fileID: 2756869878272788913}
   - component: {fileID: 2756869878273919857}
-  - component: {fileID: 2756869878279186033}
+  - component: {fileID: 114994377146042338}
+  - component: {fileID: 114873470615983058}
   m_Layer: 0
   m_Name: tree_6
   m_TagString: Untagged
@@ -26,13 +27,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2756869878271923633}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 11, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!33 &2756869878272788913
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -79,22 +80,29 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!95 &2756869878279186033
-Animator:
-  serializedVersion: 3
+--- !u!114 &114994377146042338
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2756869878271923633}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 1c4a01c675c9bad4f866874a3de82730, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df9879d0e3d13b24dbb3b9c4880c8fd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 60
+  level: {fileID: 0}
+--- !u!114 &114873470615983058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2756869878271923633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d3aa597e4bf9a84597b4e14f516a06d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

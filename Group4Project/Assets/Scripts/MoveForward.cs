@@ -25,8 +25,7 @@ public class MoveForward : MonoBehaviour
         if (!level.gameOver)
         {
             //move car speed units per second towards the back, partially in worldspace and partially relevant to object, in order to veer in a more pleasing way
-            transform.Translate(Vector3.back * speed * 2 * Time.deltaTime, Space.World);
-            transform.Translate(Vector3.forward * speed * Time.deltaTime, Space.Self);
+            transform.Translate(Vector3.back * speed * Time.deltaTime, Space.World);
         }
     }
 }
