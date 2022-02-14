@@ -11,26 +11,26 @@ public class OnColideWithPlayer : MonoBehaviour
 {
     public LevelManager level;
 
-    public Recycle rec;
+    public ObstacleRecycle rec;
 
     private void Start()
     {
         //gets the script to recycle and reference level variables
-        rec = gameObject.GetComponent<Recycle>();
+        rec = gameObject.GetComponent<ObstacleRecycle>();
         level = GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelManager>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         //if collide with the player
-        if (other.tag == "Player")
+        if (other.CompareTag("Player"))
         {
             //damage player
-            level.damage();
+            level.Damage();
 
             //TODO destruction effects
 
-            rec.recycle();
+            rec.Recycle();
         }
     }
 }

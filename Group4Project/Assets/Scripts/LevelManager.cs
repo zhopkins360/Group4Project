@@ -62,7 +62,7 @@ public class LevelManager : MonoBehaviour
     }
 
     //called when the player is damaged, such as when coliding with obstacles
-    public void damage()
+    public void Damage()
     {
         health--;
 

@@ -7,7 +7,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Recycle : MonoBehaviour
+public class ObstacleRecycle : MonoBehaviour
 {
     //z cordinate for when to move(zBack) and how far(zFront) - conrad
     public float zBack, zFront;
@@ -21,11 +21,11 @@ public class Recycle : MonoBehaviour
         //if object is beyond xBack, reinstantiate it at the start
         if(transform.position.z < zBack)
         {
-            recycle();
+            Recycle();
         }
     }
 
-    public void recycle()
+    public void Recycle()
     {
         //randomize what one of 5 lanes the obstacle appears in
         int laneIndex = Random.Range(-2,3)*2;

@@ -14,12 +14,14 @@ public class PlayerControl : MonoBehaviour
 
     public GameObject[] wheels;
 
+    public LevelManager level;
+
     //for debug below
     public GameObject[] prefab;
 
     private void Start()
     {
-
+        level = GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelManager>();
     }
 
     // Update is called once per frame
@@ -28,16 +30,19 @@ public class PlayerControl : MonoBehaviour
         //get input
         horizontalInput = Input.GetAxis("Horizontal");
 
-        //move player
-        transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed,Space.World);
+        if (!level.gameOver)
+        {
+            //move player
+            transform.Translate(horizontalInput * speed * Time.deltaTime * Vector3.right, Space.World);
 
-        //Rotate on move
-        transform.rotation = Quaternion.Euler(0, horizontalInput * 20, 0);
+            //Rotate on move
+            transform.rotation = Quaternion.Euler(0, horizontalInput * 20, 0);
+        }
 
         //rotate players wheels (I know this is practically pointless)
         for (int i = 0; i < wheels.Length; i++)
         {
-            wheels[i].transform.Rotate(Vector3.right * speed * 270 * Time.deltaTime);
+            wheels[i].transform.Rotate(270 * speed * Time.deltaTime * Vector3.right);
         }
 
         //keep player bounded
