@@ -14,7 +14,7 @@ public class LoadScene : MonoBehaviour
     //scene to be loaded when called | ONLY put scenes in this reference
     public Object SceneToLoad;
 
-    public void loadDevScene()
+    public void LoadDevScene()
     {
         //loads scene
         SceneManager.LoadScene(SceneToLoad.name);
