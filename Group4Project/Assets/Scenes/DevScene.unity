@@ -3178,9 +3178,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3868a6f803dc42b4ea0bbc9968e3188d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  haveSon: 1
+  haveSon: 0
   sonPower: 100
-  haveDaughter: 0
+  haveDaughter: 1
   imagePrefabs:
   - {fileID: 9189624741263815039, guid: 29be644d7775c704a9041c74a9194d36, type: 3}
 --- !u!1 &1208782029
@@ -4341,8 +4341,6 @@ MonoBehaviour:
   horizontalInput: 0
   speed: 8
   xLimit: 4
-  sonTurningVal: 0
-  sonAccuracy: 0.0001
   wheels:
   - {fileID: 1485469107}
   - {fileID: 1046482912}
