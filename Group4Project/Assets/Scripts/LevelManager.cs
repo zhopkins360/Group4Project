@@ -16,10 +16,18 @@ public class LevelManager : MonoBehaviour
 
     public bool gameOver;
 
+    //particle systems when health is low, critical, and 0
+    public GameObject lowHealthParticles;
+    public GameObject criticalHealthParticles;
+    public GameObject zeroHealthParticles;
+
     // Start is called before the first frame update
     void Start()
     {
         health = maxHealth;
+        lowHealthParticles.SetActive(false);
+        criticalHealthParticles.SetActive(false);
+        zeroHealthParticles.SetActive(false);
     }
 
     // Update is called once per frame
@@ -57,5 +65,28 @@ public class LevelManager : MonoBehaviour
     public void damage()
     {
         health--;
+
+        //when damaged, show relevant smoke/fire particles
+        //if health is low or critical, show smoke particles, show fire if 0
+        //for now, low threshold is 2 and critical threshold is 1
+
+        if (health <= 0)
+        {
+            lowHealthParticles.SetActive(false);
+            criticalHealthParticles.SetActive(false);
+            zeroHealthParticles.SetActive(true);
+        }
+        else if (health == 1)
+        {
+            lowHealthParticles.SetActive(false);
+            criticalHealthParticles.SetActive(true);
+            zeroHealthParticles.SetActive(false);
+        }
+        else if (health <= 2)
+        {
+            lowHealthParticles.SetActive(true);
+            criticalHealthParticles.SetActive(false);
+            zeroHealthParticles.SetActive(false);
+        }
     }
 }
