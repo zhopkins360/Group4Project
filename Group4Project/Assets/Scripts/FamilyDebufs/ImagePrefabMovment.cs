@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class ImagePrefabMovment : MonoBehaviour
 {
     private RectTransform rectTransform;
@@ -15,7 +15,12 @@ public class ImagePrefabMovment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rectTransform.Translate(Vector3.right * Time.deltaTime * speed);
-        //if(rectTransform.PosX)
+        Vector2 movementVector = new Vector2(speed, 0);
+        rectTransform.anchoredPosition += movementVector;
+
+        if(rectTransform.anchoredPosition.x > 700)
+        {
+            Destroy(gameObject);
+        }
     }
 }

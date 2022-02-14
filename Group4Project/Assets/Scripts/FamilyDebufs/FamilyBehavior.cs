@@ -76,7 +76,7 @@ public class FamilyBehavior : MonoBehaviour
     void SpawnImage()
     {
         int randIndex = Random.Range(0, imagePrefabs.Length);
-        Vector3 spawnPos = new Vector3(-630, Random.Range(-130, 130), 0);
+        Vector3 spawnPos = new Vector3(0, Random.Range(-130, 130), 0);
         Instantiate(imagePrefabs[randIndex], spawnPos, imagePrefabs[randIndex].transform.rotation, canvas.transform);
     }
 }
