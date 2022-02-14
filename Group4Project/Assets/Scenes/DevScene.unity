@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44542766, g: 0.4950896, b: 0.5740369, a: 1}
+  m_IndirectSpecularColor: {r: 0.44542807, g: 0.4950903, b: 0.574038, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3019,6 +3019,14 @@ MonoBehaviour:
   maxHealth: 5
   timeLeft: 60
   gameOver: 0
+  prefab:
+  - {fileID: 2008882127269439634, guid: acaf1342a37442044947e58496608036, type: 3}
+  - {fileID: 8441535318701635633, guid: 5ca08e126556a484a8c984721f7ffcca, type: 3}
+  - {fileID: 8012399986142083023, guid: 0ee7fd5b98a5db24a842b671e5d015d6, type: 3}
+  - {fileID: 4712465122941366771, guid: b3b7d68d51d0aef4e82b4b093e76f1ba, type: 3}
+  - {fileID: 8392962175125096197, guid: a4a4a5a668bd4524a89818f89df69273, type: 3}
+  - {fileID: 6956788763478171415, guid: afed2982fede43548a776908cc92cfdf, type: 3}
+  - {fileID: 4020104113263149417, guid: 6e5faef7fb775424d988e21dcc9421a1, type: 3}
   lowHealthParticles: {fileID: 1592388271}
   criticalHealthParticles: {fileID: 563318802}
   zeroHealthParticles: {fileID: 1018281743}
@@ -3387,7 +3395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2dd7f942e99ded48bca92c71ad04d3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 60
+  speed: 50
 --- !u!1 &1309681728
 GameObject:
   m_ObjectHideFlags: 0
@@ -4227,14 +4235,7 @@ MonoBehaviour:
   - {fileID: 1046482912}
   - {fileID: 574499876}
   - {fileID: 2011430864}
-  prefab:
-  - {fileID: 2008882127269439634, guid: acaf1342a37442044947e58496608036, type: 3}
-  - {fileID: 8441535318701635633, guid: 5ca08e126556a484a8c984721f7ffcca, type: 3}
-  - {fileID: 8012399986142083023, guid: 0ee7fd5b98a5db24a842b671e5d015d6, type: 3}
-  - {fileID: 4712465122941366771, guid: b3b7d68d51d0aef4e82b4b093e76f1ba, type: 3}
-  - {fileID: 8392962175125096197, guid: a4a4a5a668bd4524a89818f89df69273, type: 3}
-  - {fileID: 6956788763478171415, guid: afed2982fede43548a776908cc92cfdf, type: 3}
-  - {fileID: 4020104113263149417, guid: 6e5faef7fb775424d988e21dcc9421a1, type: 3}
+  level: {fileID: 0}
 --- !u!4 &1485199580 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4870167790249810, guid: 50477af197889084e8a6d97f2b73b73b,

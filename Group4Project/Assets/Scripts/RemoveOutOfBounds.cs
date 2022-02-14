@@ -9,12 +9,9 @@ using UnityEngine;
 
 public class RemoveOutOfBounds : MonoBehaviour
 {
-    private ObstacleRecycle rec;
-
     void Start()
     {
-        //get reference to the recycle script
-        rec = gameObject.GetComponent<ObstacleRecycle>();
+
     }
 
     // Update is called once per frame
@@ -22,7 +19,7 @@ public class RemoveOutOfBounds : MonoBehaviour
     {
         if (Mathf.Abs(transform.position.x) > 4.5 || transform.position.y > .5)
         {
-            rec.Recycle();
+            Destroy(gameObject);
         }
     }
 }

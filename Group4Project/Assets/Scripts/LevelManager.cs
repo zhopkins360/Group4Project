@@ -16,6 +16,8 @@ public class LevelManager : MonoBehaviour
 
     public bool gameOver;
 
+    public GameObject[] prefab;
+
     //particle systems when health is low, critical, and 0
     public GameObject lowHealthParticles;
     public GameObject criticalHealthParticles;
@@ -28,6 +30,7 @@ public class LevelManager : MonoBehaviour
         lowHealthParticles.SetActive(false);
         criticalHealthParticles.SetActive(false);
         zeroHealthParticles.SetActive(false);
+        StartCoroutine(SpawnCars());
     }
 
     // Update is called once per frame
@@ -88,5 +91,29 @@ public class LevelManager : MonoBehaviour
             criticalHealthParticles.SetActive(false);
             zeroHealthParticles.SetActive(false);
         }
+    }
+
+    IEnumerator SpawnCars()
+    {
+        yield return new WaitForSeconds(4f);
+
+        while (!gameOver)
+        {
+            Spawn();
+
+            yield return new WaitForSeconds(Random.Range(0,2f));
+        }
+    }
+
+    void Spawn()
+    {
+        //randomize what one of 5 lanes the obstacle appears in
+        int laneIndex = Random.Range(-2, 3) * 2;
+
+        //create position to create new copy of prefab
+        Vector3 recyclePosition = new Vector3(laneIndex, 0, 20);
+
+        //create new obstacle with no roatation in case of collision
+        Instantiate(prefab[Random.Range(0, prefab.Length)], recyclePosition, new Quaternion());
     }
 }

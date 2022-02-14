@@ -17,7 +17,7 @@ public class PlayerControl : MonoBehaviour
     public LevelManager level;
 
     //for debug below
-    public GameObject[] prefab;
+    //public GameObject[] prefab;
 
     private void Start()
     {
@@ -52,9 +52,9 @@ public class PlayerControl : MonoBehaviour
         }
 
         //Debug summon cars
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Instantiate(prefab[Random.Range(0,prefab.Length)], transform.position - new Vector3(0, 0, 10), new Quaternion());
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    Instantiate(prefab[Random.Range(0,prefab.Length)], transform.position + new Vector3(0, 0, 20), new Quaternion());
+        //}
     }
 }
