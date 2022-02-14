@@ -9,11 +9,6 @@ using UnityEngine;
 
 public class RemoveOutOfBounds : MonoBehaviour
 {
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {

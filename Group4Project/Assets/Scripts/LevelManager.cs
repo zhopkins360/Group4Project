@@ -95,7 +95,7 @@ public class LevelManager : MonoBehaviour
 
     IEnumerator SpawnCars()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(2f);
 
         while (!gameOver)
         {
