@@ -37,6 +37,7 @@ public class FamilyBehavior : MonoBehaviour
     {
         
     }
+
     //ienumerator to randomize the delay s for 
     IEnumerator SonDebuf()
     {
@@ -63,7 +64,7 @@ public class FamilyBehavior : MonoBehaviour
     //Calls the spawn image function and randomizes the delayes between images
     IEnumerator DaughterDebuf() 
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(Random.Range(1f,5f));
 
         while (!levelManagerScript.gameOver)
         {
@@ -76,7 +77,7 @@ public class FamilyBehavior : MonoBehaviour
     void SpawnImage()
     {
         int randIndex = Random.Range(0, imagePrefabs.Length);
-        Vector3 spawnPos = new Vector3(-630, Random.Range(-130, 130), 0);
+        Vector3 spawnPos = new Vector3(Random.Range(50,650), Random.Range(100, 350), 0);
         Instantiate(imagePrefabs[randIndex], spawnPos, imagePrefabs[randIndex].transform.rotation, canvas.transform);
     }
 }
