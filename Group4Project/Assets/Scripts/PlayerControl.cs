@@ -19,8 +19,11 @@ public class PlayerControl : MonoBehaviour
     //for debug below
     //public GameObject[] prefab;
 
+    private FamilyBehavior familyBehaviorScript;
+
     private void Start()
     {
+        familyBehaviorScript = GameObject.FindGameObjectWithTag("GameController").GetComponent<FamilyBehavior>();
         level = GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelManager>();
     }
 
