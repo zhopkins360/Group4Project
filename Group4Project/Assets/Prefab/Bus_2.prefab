@@ -362,7 +362,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: {fileID: 0}
-  rec: {fileID: 0}
+  Explosion: {fileID: 3404238505581209160, guid: 9001f37fc4b803e419158674f370b4eb,
+    type: 3}
 --- !u!1 &8441619352625867587
 GameObject:
   m_ObjectHideFlags: 0

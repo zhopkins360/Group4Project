@@ -11,6 +11,8 @@ public class OnColideWithPlayer : MonoBehaviour
 {
     public LevelManager level;
 
+    public GameObject Explosion;
+
     //public Obstacle rec;
 
     private void Start()
@@ -28,7 +30,8 @@ public class OnColideWithPlayer : MonoBehaviour
             //damage player
             level.Damage();
 
-            //TODO destruction effects
+            Instantiate(Explosion, transform.position, Explosion.transform.rotation);
+            Debug.Log("Explosion");
 
             Destroy(gameObject);
         }

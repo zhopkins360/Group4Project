@@ -8,6 +8,7 @@ TagManager:
   - MovingObstacle
   - Overlay
   - SpawnedImage
+  - Effect
   layers:
   - Default
   - TransparentFX
