@@ -3178,7 +3178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3868a6f803dc42b4ea0bbc9968e3188d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  haveSon: 0
+  haveSon: 1
   sonPower: 100
   haveDaughter: 1
   imagePrefabs:
