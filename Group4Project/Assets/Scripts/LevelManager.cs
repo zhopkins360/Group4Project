@@ -12,11 +12,14 @@ public class LevelManager : MonoBehaviour
 {
     public int health, maxHealth;
     
-    public float timeLeft;
+    public float timeLeft, maxSpawnDelay;
 
-    public bool gameOver;
+    public bool gameOver, win;
 
     public GameObject[] prefab;
+
+    public GameObject levelEnd;
+    private bool levelEndSpawned = false;
 
     //particle systems when health is low, critical, and 0
     public GameObject lowHealthParticles;
@@ -42,11 +45,15 @@ public class LevelManager : MonoBehaviour
             health = maxHealth;
         }
 
-        //if out of health or time, clean up time and end game
-        if (health <= 0 || timeLeft <=0)
+        //if out of health, clean up time and end game
+        if (health <= 0)
         {
-            timeLeft = 0f;
             gameOver = true;
+        }
+        else if (timeLeft <= 0 && !levelEndSpawned)
+        {
+            Instantiate(levelEnd, levelEnd.transform.position, levelEnd.transform.rotation, gameObject.transform);
+            levelEndSpawned = true;
         }
 
         //when the game is not over, reduce timer
@@ -97,11 +104,11 @@ public class LevelManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
 
-        while (!gameOver)
+        while (!gameOver && !levelEndSpawned)
         {
             Spawn();
 
-            yield return new WaitForSeconds(Random.Range(0,2f));
+            yield return new WaitForSeconds(Random.Range(0.1f, maxSpawnDelay));
         }
     }
 

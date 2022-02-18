@@ -3110,8 +3110,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 5
   maxHealth: 5
-  timeLeft: 60
+  timeLeft: 20
+  maxSpawnDelay: 2
   gameOver: 0
+  win: 0
   prefab:
   - {fileID: 2008882127269439634, guid: acaf1342a37442044947e58496608036, type: 3}
   - {fileID: 8441535318701635633, guid: 5ca08e126556a484a8c984721f7ffcca, type: 3}
@@ -3120,6 +3122,8 @@ MonoBehaviour:
   - {fileID: 8392962175125096197, guid: a4a4a5a668bd4524a89818f89df69273, type: 3}
   - {fileID: 6956788763478171415, guid: afed2982fede43548a776908cc92cfdf, type: 3}
   - {fileID: 4020104113263149417, guid: 6e5faef7fb775424d988e21dcc9421a1, type: 3}
+  levelEnd: {fileID: 2812084013693348577, guid: 422d9b284d056d44997c873cfe6b8456,
+    type: 3}
   lowHealthParticles: {fileID: 1592388271}
   criticalHealthParticles: {fileID: 563318802}
   zeroHealthParticles: {fileID: 1018281743}

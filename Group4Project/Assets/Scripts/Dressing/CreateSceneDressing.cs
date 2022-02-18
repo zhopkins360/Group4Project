@@ -22,7 +22,7 @@ public class CreateSceneDressing : MonoBehaviour
         while (!level.gameOver)
         {
             SpawnDressing();
-            yield return new WaitForSeconds(UnityEngine.Random.Range(.25f,.75f));
+            yield return new WaitForSeconds(UnityEngine.Random.Range(.25f,.5f));
         }
     }
 

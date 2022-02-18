@@ -25,7 +25,7 @@ public class OnColideWithPlayer : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //if collide with the player
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && gameObject.CompareTag("MovingObstacle"))
         {
             //damage player
             level.Damage();
@@ -34,6 +34,11 @@ public class OnColideWithPlayer : MonoBehaviour
             Debug.Log("Explosion");
 
             Destroy(gameObject);
+        }
+        else if (other.CompareTag("Player") && gameObject.CompareTag("Finish"))
+        {
+            level.gameOver = true;
+            level.win = true;
         }
     }
 }

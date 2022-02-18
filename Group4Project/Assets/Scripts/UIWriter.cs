@@ -41,6 +41,10 @@ public class UIWriter : MonoBehaviour
                 textBox.text += "<color=#6b0000ff>❤</color>";
             }
         }
+        else if (level.win)
+        {
+            textBox.text = "You Win!\nPress R to retry";
+        }
         else
         {
             //if game is over, display instructions
