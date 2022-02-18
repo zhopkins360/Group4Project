@@ -34,6 +34,11 @@ public class CreateSceneDressing : MonoBehaviour
 
         Vector3 spawnLocation = new Vector3(prefabs[index].transform.position.x * (leftOrRight ? -1 : 1), prefabs[index].transform.position.y,30);
 
-        Instantiate(prefabs[index], spawnLocation, prefabs[index].transform.rotation);
+        Vector3 spwanRotationVec = prefabs[index].transform.eulerAngles;
+        spwanRotationVec.y *= (leftOrRight ? -1 : 1);
+        Quaternion spawnRotation = new Quaternion();
+        spawnRotation.eulerAngles = spwanRotationVec;
+
+        Instantiate(prefabs[index], spawnLocation, spawnRotation);
     }
 }

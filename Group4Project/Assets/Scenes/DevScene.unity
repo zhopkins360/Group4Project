@@ -215,7 +215,6 @@ GameObject:
   - component: {fileID: 19625498}
   - component: {fileID: 19625497}
   - component: {fileID: 19625496}
-  - component: {fileID: 19625495}
   m_Layer: 0
   m_Name: Grass
   m_TagString: Untagged
@@ -223,20 +222,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &19625495
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 19625494}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &19625496
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -291,7 +276,7 @@ Transform:
   m_GameObject: {fileID: 19625494}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 1, z: 5}
+  m_LocalScale: {x: 6, y: 1, z: 5}
   m_Children: []
   m_Father: {fileID: 1301273363}
   m_RootOrder: 5
@@ -783,7 +768,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 156772948}
   m_LocalRotation: {x: 0.46174863, y: 0, z: 0, w: 0.8870109}
-  m_LocalPosition: {x: 0, y: 5.75, z: -22}
+  m_LocalPosition: {x: 0, y: 8.83, z: -22.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3110,7 +3095,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 5
   maxHealth: 5
-  timeLeft: 20
+  timeLeft: 5
   maxSpawnDelay: 2
   gameOver: 0
   win: 0
@@ -3122,7 +3107,7 @@ MonoBehaviour:
   - {fileID: 8392962175125096197, guid: a4a4a5a668bd4524a89818f89df69273, type: 3}
   - {fileID: 6956788763478171415, guid: afed2982fede43548a776908cc92cfdf, type: 3}
   - {fileID: 4020104113263149417, guid: 6e5faef7fb775424d988e21dcc9421a1, type: 3}
-  levelEnd: {fileID: 2812084013693348577, guid: 422d9b284d056d44997c873cfe6b8456,
+  levelEnd: {fileID: 8593041164556610339, guid: e220340d379850748bbbf44f4cbcf3db,
     type: 3}
   lowHealthParticles: {fileID: 1592388271}
   criticalHealthParticles: {fileID: 563318802}
@@ -3163,6 +3148,21 @@ MonoBehaviour:
   - {fileID: 8658682885443504467, guid: aa86992583096774d99868682c24acb3, type: 3}
   - {fileID: 5070414881900898884, guid: cf2b967b10f9863439e1bd49cb44f039, type: 3}
   - {fileID: 4385760213607318563, guid: 820d9676d71edeb46a2ceb91572c9787, type: 3}
+  - {fileID: 999694302439002866, guid: e381f026b2ff0244e89a68b2a58e9dba, type: 3}
+  - {fileID: 1150376605788120071, guid: 70810b52b84e6d74ca8392ade30bdb27, type: 3}
+  - {fileID: 6596850315553187226, guid: 8fed476f4677522418d60533fcac6d71, type: 3}
+  - {fileID: 4911911257667036076, guid: 68485c842a0f2ff41ae9dd8683f74a05, type: 3}
+  - {fileID: 1792459549023088795, guid: bdc3486e5f2bac7418576e442a71c18f, type: 3}
+  - {fileID: 3343485109179076428, guid: d88f261d33062f54ea387fedf556badd, type: 3}
+  - {fileID: 7410696709341033702, guid: 358e6b3129543064fa1504114cc33479, type: 3}
+  - {fileID: 3401743629370697407, guid: e913435277f4b294a952762d2bd4753e, type: 3}
+  - {fileID: 2863811983732101383, guid: a08cd9ccec8352a45a5efbe8e282f755, type: 3}
+  - {fileID: 135852270039132142, guid: 67d754936dc239241aeefc32cf5e23a6, type: 3}
+  - {fileID: 5994439664764309820, guid: ebaa1e55231bb3f45aa0ef27466c2dd1, type: 3}
+  - {fileID: 3882402723046667754, guid: 8c2c1547fed2bd247ad940de7fa2f6cd, type: 3}
+  - {fileID: 3404842401407619161, guid: cb81ce6bdb95de345a3d4e963e5aa173, type: 3}
+  - {fileID: 850916254687063737, guid: 54366eb7012385a469ea02f442ea9f0c, type: 3}
+  - {fileID: 7619056907546273115, guid: a4f0b0c0819dbf04ea34c1202bd3a70d, type: 3}
   - {fileID: 4899267025894944889, guid: 8bd449024ae5fd243924a967a5cb459e, type: 3}
   - {fileID: 5609053809869562462, guid: c37017e2822f83a43a16a8faebba6cae, type: 3}
   - {fileID: 6010254782540005631, guid: 1242d57cfb57f764ea82c29dc8e2f7f3, type: 3}
