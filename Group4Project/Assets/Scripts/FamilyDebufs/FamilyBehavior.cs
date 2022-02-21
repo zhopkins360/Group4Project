@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class FamilyBehavior : MonoBehaviour
 {
-    public float incomingVehicleSpeed = 10;
+    public float incomingVehicleSpeed;
     public bool haveSon;
     public float sonPower;
     public bool haveDaughter;
     public bool haveWife;
-    public float wifePower = .5f;
+    public float wifePower;
     private float wifeSpeed;
     public GameObject[] imagePrefabs;
 
@@ -50,7 +50,6 @@ public class FamilyBehavior : MonoBehaviour
     //have wife function
     IEnumerator WifeDebuf()
     {
-        yield return new WaitForSeconds(10f);
         while (!levelManagerScript.gameOver)
         {
             float delay = Random.Range(5f,8f);
@@ -60,7 +59,7 @@ public class FamilyBehavior : MonoBehaviour
                 incomingVehicleSpeed = wifeSpeed;
             }
             yield return new WaitForSeconds(10f);
-            incomingVehicleSpeed = 10;
+            //incomingVehicleSpeed = 10;
         }
     }
 

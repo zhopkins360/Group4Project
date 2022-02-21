@@ -24,7 +24,7 @@ public class MoveForward : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!level.gameOver && !CompareTag("Prop"))
+        if (CompareTag("MovingObstacle"))
         {
             speed = familyBehaviorScript.incomingVehicleSpeed;
         }
@@ -32,8 +32,10 @@ public class MoveForward : MonoBehaviour
         {
             speed = 50;
         }
-
-        //move car speed units per second towards the back
-        transform.Translate(speed * Time.deltaTime * Vector3.back, Space.World);
+        if (!level.gameOver)
+        {
+            //move car speed units per second towards the back, partially in worldspace and partially relevant to object, in order to veer in a more pleasing way
+            transform.Translate(speed * Time.deltaTime * Vector3.back, Space.World);
+        }
     }
 }
