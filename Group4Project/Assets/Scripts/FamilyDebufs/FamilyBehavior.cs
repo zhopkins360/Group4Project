@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class FamilyBehavior : MonoBehaviour
 {
+    public float incomingVehicleSpeed = 10;
     public bool haveSon;
     public float sonPower;
     public bool haveDaughter;
+    public bool haveWife;
+    public float wifePower = .5f;
+    private float wifeSpeed;
     public GameObject[] imagePrefabs;
 
     private GameObject canvas;
@@ -24,11 +28,16 @@ public class FamilyBehavior : MonoBehaviour
         {
             StartCoroutine(SonDebuf());
         }
-
         //if you have the daughter debuf
         if (haveDaughter)
         {
             StartCoroutine(DaughterDebuf());
+        }
+        //if you have the wife debuf start it
+        if (haveWife)
+        {
+            StartCoroutine(WifeDebuf());
+            wifeSpeed = incomingVehicleSpeed * (1 + wifePower);
         }
     }
 
@@ -36,6 +45,23 @@ public class FamilyBehavior : MonoBehaviour
     void Update()
     {
         
+    }
+
+    //have wife function
+    IEnumerator WifeDebuf()
+    {
+        yield return new WaitForSeconds(10f);
+        while (!levelManagerScript.gameOver)
+        {
+            float delay = Random.Range(5f,8f);
+            if (haveWife)
+            {
+                yield return new WaitForSeconds(delay);
+                incomingVehicleSpeed = wifeSpeed;
+            }
+            yield return new WaitForSeconds(10f);
+            incomingVehicleSpeed = 10;
+        }
     }
 
     //ienumerator to randomize the delay s for 

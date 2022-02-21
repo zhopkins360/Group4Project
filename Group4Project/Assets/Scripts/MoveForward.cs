@@ -14,9 +14,11 @@ public class MoveForward : MonoBehaviour
 
     public LevelManager level;
 
+    public FamilyBehavior familyBehaviorScript;
     private void Start()
     {
         level = GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelManager>();
+        familyBehaviorScript = GameObject.FindGameObjectWithTag("GameController").GetComponent<FamilyBehavior>();
     }
 
     // Update is called once per frame
@@ -24,6 +26,7 @@ public class MoveForward : MonoBehaviour
     {
         if (!level.gameOver)
         {
+            speed = familyBehaviorScript.incomingVehicleSpeed;
             //move car speed units per second towards the back, partially in worldspace and partially relevant to object, in order to veer in a more pleasing way
             transform.Translate(speed * Time.deltaTime * Vector3.back, Space.World);
         }

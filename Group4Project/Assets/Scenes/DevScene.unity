@@ -3095,7 +3095,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 5
   maxHealth: 5
-  timeLeft: 5
+  timeLeft: 60
   maxSpawnDelay: 2
   gameOver: 0
   win: 0
@@ -3182,11 +3182,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3868a6f803dc42b4ea0bbc9968e3188d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  haveSon: 0
+  incomingVehicleSpeed: 10
+  haveSon: 1
   sonPower: 100
-  haveDaughter: 0
+  haveDaughter: 1
+  haveWife: 1
+  wifePower: 0.75
   imagePrefabs:
   - {fileID: 9189624741263815039, guid: 29be644d7775c704a9041c74a9194d36, type: 3}
+  - {fileID: 7181523804831282252, guid: 539f944385b8f8845a00a08f4c834a7d, type: 3}
+  - {fileID: 6299029619804237114, guid: 73be0eb2b06dd814b8673063eb89ddff, type: 3}
 --- !u!1 &1208782029
 GameObject:
   m_ObjectHideFlags: 0
