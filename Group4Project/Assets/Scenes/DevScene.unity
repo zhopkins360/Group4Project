@@ -3183,7 +3183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   incomingVehicleSpeed: 10
-  haveSon: 1
+  haveSon: 0
   sonPower: 100
   haveDaughter: 1
   haveWife: 1

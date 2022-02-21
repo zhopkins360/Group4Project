@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 1026973197192955921}
   - component: {fileID: 7701846576766146817}
   m_Layer: 0
-  m_Name: sptp_billboard_02 1
-  m_TagString: Untagged
+  m_Name: sptp_billboard_02
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,6 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 50
   level: {fileID: 0}
+  familyBehaviorScript: {fileID: 0}
 --- !u!114 &7701846576766146817
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 114576634123073068}
   m_Layer: 0
   m_Name: tree_7
-  m_TagString: Untagged
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,6 +94,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 50
   level: {fileID: 0}
+  familyBehaviorScript: {fileID: 0}
 --- !u!114 &114576634123073068
 MonoBehaviour:
   m_ObjectHideFlags: 0

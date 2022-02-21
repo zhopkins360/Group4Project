@@ -9,6 +9,7 @@ TagManager:
   - Overlay
   - SpawnedImage
   - Effect
+  - Prop
   layers:
   - Default
   - TransparentFX
