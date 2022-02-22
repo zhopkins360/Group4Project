@@ -12,6 +12,8 @@ public class UIWriter : MonoBehaviour
 {
     public Text textBox;
 
+    public GameObject maniMenuButton;
+
     public LevelManager level;
 
     // Start is called before the first frame update
@@ -43,10 +45,12 @@ public class UIWriter : MonoBehaviour
         }
         else if (level.win)
         {
+            maniMenuButton.SetActive(true);
             textBox.text = "You Win!\nPress R to retry";
         }
         else
         {
+            maniMenuButton.SetActive(true);
             //if game is over, display instructions
             textBox.text = "Game Over!\nPress R to retry";
         }
