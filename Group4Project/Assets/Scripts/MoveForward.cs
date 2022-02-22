@@ -28,10 +28,15 @@ public class MoveForward : MonoBehaviour
         {
             speed = familyBehaviorScript.incomingVehicleSpeed;
         }
+        else if(CompareTag("Effect"))
+        {
+            speed = 5;
+        }
         else
         {
             speed = 50;
         }
+
         if (!level.gameOver)
         {
             //move car speed units per second towards the back, partially in worldspace and partially relevant to object, in order to veer in a more pleasing way

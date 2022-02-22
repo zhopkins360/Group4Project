@@ -16,6 +16,8 @@ public class PlayerControl : MonoBehaviour
 
     public LevelManager level;
 
+    public GameObject wifeModel, sonModel, daughterModel;
+
     //for debug below
     //public GameObject[] prefab;
 
@@ -53,6 +55,10 @@ public class PlayerControl : MonoBehaviour
         {
             transform.position = new Vector3(xLimit * Mathf.Sign(transform.position.x), transform.position.y, transform.position.z);
         }
+
+        wifeModel.SetActive(familyBehaviorScript.haveWife);
+        sonModel.SetActive(familyBehaviorScript.haveSon);
+        daughterModel.SetActive(familyBehaviorScript.haveDaughter);
 
         //Debug summon cars
         //if (Input.GetKeyDown(KeyCode.Space))
