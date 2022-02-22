@@ -5036,7 +5036,9 @@ MonoBehaviour:
   health: 5
   maxHealth: 5
   timeLeft: 60
+  startDelay: 0
   maxSpawnDelay: 2
+  difficulty: 0.5
   gameOver: 0
   win: 0
   prefab:
@@ -5123,10 +5125,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   incomingVehicleSpeed: 10
-  haveSon: 1
+  haveSon: 0
   sonPower: 150
-  haveDaughter: 1
-  haveWife: 1
+  haveDaughter: 0
+  haveWife: 0
   wifePower: 0.75
   imagePrefabs:
   - {fileID: 9189624741263815039, guid: 29be644d7775c704a9041c74a9194d36, type: 3}

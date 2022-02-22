@@ -12,7 +12,8 @@ public class LevelManager : MonoBehaviour
 {
     public int health, maxHealth;
     
-    public float timeLeft, maxSpawnDelay;
+    public float timeLeft, startDelay, maxSpawnDelay, difficulty;
+    private float spawnDelay, maxTime;
 
     public bool gameOver, win;
 
@@ -30,6 +31,7 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         health = maxHealth;
+        maxTime = timeLeft;
         lowHealthParticles.SetActive(false);
         criticalHealthParticles.SetActive(false);
         zeroHealthParticles.SetActive(false);
@@ -102,13 +104,17 @@ public class LevelManager : MonoBehaviour
 
     IEnumerator SpawnCars()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(startDelay);
 
         while (!gameOver && !levelEndSpawned)
         {
             Spawn();
 
-            yield return new WaitForSeconds(Random.Range(0.1f, maxSpawnDelay));
+            spawnDelay = maxSpawnDelay * (timeLeft / maxTime) / difficulty;
+
+            spawnDelay = Mathf.Max(0.5f, spawnDelay);
+
+            yield return new WaitForSeconds(Random.Range(spawnDelay/10, spawnDelay));
         }
     }
 
