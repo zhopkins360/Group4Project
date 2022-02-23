@@ -118,7 +118,7 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    void Spawn()
+    public void Spawn()
     {
         //randomize what one of 5 lanes the obstacle appears in
         int laneIndex = Random.Range(-2, 3) * 2;
