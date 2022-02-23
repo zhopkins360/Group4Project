@@ -995,9 +995,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 261435688}
-  - component: {fileID: 261435691}
-  - component: {fileID: 261435690}
-  - component: {fileID: 261435689}
   m_Layer: 0
   m_Name: Son
   m_TagString: Untagged
@@ -1023,65 +1020,6 @@ Transform:
   m_Father: {fileID: 673532286}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 40}
---- !u!114 &261435689
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 261435687}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 262da11d95041f04c9183f639fb25d94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minmaxSpeed: {x: 0.8, y: 1.2}
-  playerState: 0
-  refreshDestination: 0
-  pauseTime: 5
-  targetPoint: 0
-  destinationFolder: {fileID: 0}
---- !u!195 &261435690
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 261435687}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.2
-  m_Speed: 1
-  m_Acceleration: 100
-  avoidancePriority: 50
-  m_AngularSpeed: 500
-  m_StoppingDistance: 0.3
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
---- !u!95 &261435691
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 261435687}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: afb4f7eac1239eb438139d748b6aea07, type: 3}
-  m_Controller: {fileID: 9100000, guid: 465cbb5c1a6fe354b8f0535ed9260e20, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &290354904
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3124,9 +3062,9 @@ MonoBehaviour:
   - {fileID: 673532288}
   - {fileID: 673532287}
   level: {fileID: 0}
-  wifeModel: {fileID: 0}
-  sonModel: {fileID: 0}
-  daughterModel: {fileID: 0}
+  wifeModel: {fileID: 1301544172}
+  sonModel: {fileID: 261435687}
+  daughterModel: {fileID: 1160724691}
 --- !u!65 &673532293
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5143,10 +5081,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1160724692}
-  - component: {fileID: 1160724696}
-  - component: {fileID: 1160724695}
-  - component: {fileID: 1160724694}
-  - component: {fileID: 1160724693}
   m_Layer: 0
   m_Name: Daughter
   m_TagString: Player
@@ -5172,79 +5106,6 @@ Transform:
   m_Father: {fileID: 673532286}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -40}
---- !u!114 &1160724693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1160724691}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 262da11d95041f04c9183f639fb25d94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minmaxSpeed: {x: 0.8, y: 1.2}
-  playerState: 0
-  refreshDestination: 0
-  pauseTime: 5
-  targetPoint: 0
-  destinationFolder: {fileID: 0}
---- !u!195 &1160724694
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1160724691}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.2
-  m_Speed: 1
-  m_Acceleration: 100
-  avoidancePriority: 50
-  m_AngularSpeed: 500
-  m_StoppingDistance: 0.3
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
---- !u!136 &1160724695
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1160724691}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.25
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.5, z: 0}
---- !u!95 &1160724696
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1160724691}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: afb4f7eac1239eb438139d748b6aea07, type: 3}
-  m_Controller: {fileID: 9100000, guid: 465cbb5c1a6fe354b8f0535ed9260e20, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1173011313
 GameObject:
   m_ObjectHideFlags: 0
@@ -5653,7 +5514,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1301544173}
-  - component: {fileID: 1301544174}
   m_Layer: 0
   m_Name: Mother
   m_TagString: Player
@@ -5679,25 +5539,6 @@ Transform:
   m_Father: {fileID: 673532286}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -40}
---- !u!95 &1301544174
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1301544172}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: afb4f7eac1239eb438139d748b6aea07, type: 3}
-  m_Controller: {fileID: 9100000, guid: 465cbb5c1a6fe354b8f0535ed9260e20, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1306197834
 GameObject:
   m_ObjectHideFlags: 0

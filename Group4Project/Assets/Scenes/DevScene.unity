@@ -2609,7 +2609,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1160946183}
+      - m_Target: {fileID: 0}
         m_MethodName: LoadmainMenu
         m_Mode: 1
         m_Arguments:
@@ -5140,7 +5140,6 @@ GameObject:
   - component: {fileID: 1160946179}
   - component: {fileID: 1160946182}
   - component: {fileID: 1160946181}
-  - component: {fileID: 1160946183}
   m_Layer: 0
   m_Name: Manager
   m_TagString: GameController
@@ -5261,25 +5260,6 @@ MonoBehaviour:
   - {fileID: 9189624741263815039, guid: 29be644d7775c704a9041c74a9194d36, type: 3}
   - {fileID: 7181523804831282252, guid: 539f944385b8f8845a00a08f4c834a7d, type: 3}
   - {fileID: 6299029619804237114, guid: 73be0eb2b06dd814b8673063eb89ddff, type: 3}
---- !u!114 &1160946183
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1160946178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0efd65177d493c248b263eb62c8f1f26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Dev: {fileID: 0}
-  level1: {fileID: 0}
-  level2: {fileID: 0}
-  level3: {fileID: 0}
-  level4: {fileID: 0}
-  level5: {fileID: 0}
-  mainMenu: {fileID: 102900000, guid: da994061e2fba2245afc8ab7f7965275, type: 3}
 --- !u!1 &1162771041
 GameObject:
   m_ObjectHideFlags: 0

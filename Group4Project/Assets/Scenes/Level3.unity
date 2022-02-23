@@ -665,9 +665,9 @@ MonoBehaviour:
   - {fileID: 75923446}
   - {fileID: 75923445}
   level: {fileID: 0}
-  wifeModel: {fileID: 0}
-  sonModel: {fileID: 0}
-  daughterModel: {fileID: 0}
+  wifeModel: {fileID: 487978085}
+  sonModel: {fileID: 2092866009}
+  daughterModel: {fileID: 453569348}
 --- !u!65 &75923451
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1968,10 +1968,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 453569349}
-  - component: {fileID: 453569353}
-  - component: {fileID: 453569352}
-  - component: {fileID: 453569351}
-  - component: {fileID: 453569350}
   m_Layer: 0
   m_Name: Daughter
   m_TagString: Player
@@ -1997,79 +1993,6 @@ Transform:
   m_Father: {fileID: 75923444}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -40}
---- !u!114 &453569350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 453569348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 262da11d95041f04c9183f639fb25d94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minmaxSpeed: {x: 0.8, y: 1.2}
-  playerState: 0
-  refreshDestination: 0
-  pauseTime: 5
-  targetPoint: 0
-  destinationFolder: {fileID: 0}
---- !u!195 &453569351
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 453569348}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.2
-  m_Speed: 1
-  m_Acceleration: 100
-  avoidancePriority: 50
-  m_AngularSpeed: 500
-  m_StoppingDistance: 0.3
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
---- !u!136 &453569352
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 453569348}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.25
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.5, z: 0}
---- !u!95 &453569353
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 453569348}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: afb4f7eac1239eb438139d748b6aea07, type: 3}
-  m_Controller: {fileID: 9100000, guid: 465cbb5c1a6fe354b8f0535ed9260e20, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &487978085
 GameObject:
   m_ObjectHideFlags: 0
@@ -2079,7 +2002,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 487978086}
-  - component: {fileID: 487978087}
   m_Layer: 0
   m_Name: Mother
   m_TagString: Player
@@ -2105,25 +2027,6 @@ Transform:
   m_Father: {fileID: 75923444}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -40}
---- !u!95 &487978087
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 487978085}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: afb4f7eac1239eb438139d748b6aea07, type: 3}
-  m_Controller: {fileID: 9100000, guid: 465cbb5c1a6fe354b8f0535ed9260e20, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &502604514
 GameObject:
   m_ObjectHideFlags: 0
@@ -4149,10 +4052,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   incomingVehicleSpeed: 10
-  haveSon: 1
+  haveSon: 0
   sonPower: 150
   haveDaughter: 1
-  haveWife: 1
+  haveWife: 0
   wifePower: 0.75
   imagePrefabs:
   - {fileID: 9189624741263815039, guid: 29be644d7775c704a9041c74a9194d36, type: 3}
@@ -8930,9 +8833,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2092866010}
-  - component: {fileID: 2092866013}
-  - component: {fileID: 2092866012}
-  - component: {fileID: 2092866011}
   m_Layer: 0
   m_Name: Son
   m_TagString: Untagged
@@ -8958,65 +8858,6 @@ Transform:
   m_Father: {fileID: 75923444}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 40}
---- !u!114 &2092866011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2092866009}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 262da11d95041f04c9183f639fb25d94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minmaxSpeed: {x: 0.8, y: 1.2}
-  playerState: 0
-  refreshDestination: 0
-  pauseTime: 5
-  targetPoint: 0
-  destinationFolder: {fileID: 0}
---- !u!195 &2092866012
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2092866009}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.2
-  m_Speed: 1
-  m_Acceleration: 100
-  avoidancePriority: 50
-  m_AngularSpeed: 500
-  m_StoppingDistance: 0.3
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
---- !u!95 &2092866013
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2092866009}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: afb4f7eac1239eb438139d748b6aea07, type: 3}
-  m_Controller: {fileID: 9100000, guid: 465cbb5c1a6fe354b8f0535ed9260e20, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2107685149
 GameObject:
   m_ObjectHideFlags: 0
