@@ -5021,7 +5021,7 @@ MonoBehaviour:
   timeLeft: 60
   startDelay: 0
   maxSpawnDelay: 2
-  difficulty: 0
+  difficulty: 0.5
   gameOver: 0
   win: 0
   prefab:
