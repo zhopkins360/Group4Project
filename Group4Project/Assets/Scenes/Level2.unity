@@ -5167,13 +5167,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0efd65177d493c248b263eb62c8f1f26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Dev: {fileID: 0}
-  level1: {fileID: 0}
-  level2: {fileID: 0}
-  level3: {fileID: 0}
-  level4: {fileID: 0}
-  level5: {fileID: 0}
-  mainMenu: {fileID: 102900000, guid: da994061e2fba2245afc8ab7f7965275, type: 3}
 --- !u!1 &1006977390
 GameObject:
   m_ObjectHideFlags: 0
