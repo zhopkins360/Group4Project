@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class FamilyBehavior : MonoBehaviour
 {
+    public AudioSource playerAudio;
+    public AudioClip sonAudio;
+    public AudioClip daughterAudio;
+    public AudioClip wifeAudio;
     public float incomingVehicleSpeed;
     public bool haveSon;
     public float sonPower;
@@ -57,6 +61,7 @@ public class FamilyBehavior : MonoBehaviour
             {
                 yield return new WaitForSeconds(delay);
                 incomingVehicleSpeed = wifeSpeed;
+                playerAudio.PlayOneShot(wifeAudio);
             }
             yield return new WaitForSeconds(10f);
             //incomingVehicleSpeed = 10;
@@ -73,13 +78,18 @@ public class FamilyBehavior : MonoBehaviour
             if (haveSon)
             {
                 float leftOrRight = Random.Range(-1, 1);
+                playerAudio.PlayOneShot(sonAudio);
                 if (leftOrRight < 0)
                 {
-                    playerCar.AddForce(Vector3.right * sonPower);
+                    playerCar.AddForce(Vector3.right * sonPower, ForceMode.Impulse);
+                    yield return new WaitForSeconds(1f);
+                    playerCar.AddForce((-1) * Vector3.right * sonPower, ForceMode.Impulse);
                 }
                 else
                 {
-                    playerCar.AddForce(Vector3.left * sonPower);
+                    playerCar.AddForce(Vector3.left * sonPower, ForceMode.Impulse);
+                    yield return new WaitForSeconds(1f);
+                    playerCar.AddForce((-1)*Vector3.left * sonPower, ForceMode.Impulse);
                 }
             }
             yield return new WaitForSeconds(delay);
@@ -95,6 +105,7 @@ public class FamilyBehavior : MonoBehaviour
         {
             float delay = Random.Range(3f, 4f);
             SpawnImage();
+            playerAudio.PlayOneShot(daughterAudio);
             yield return new WaitForSeconds(delay);
         }
     }
