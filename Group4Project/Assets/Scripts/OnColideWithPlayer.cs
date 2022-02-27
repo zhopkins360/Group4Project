@@ -40,5 +40,11 @@ public class OnColideWithPlayer : MonoBehaviour
             level.gameOver = true;
             level.win = true;
         }
+        else if(other.CompareTag("Player") && gameObject.CompareTag("Health"))
+        {
+            level.Heal();
+
+            Destroy(gameObject);
+        }
     }
 }

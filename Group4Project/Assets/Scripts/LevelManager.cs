@@ -18,6 +18,7 @@ public class LevelManager : MonoBehaviour
     public bool gameOver, win;
 
     public GameObject[] prefab;
+    public GameObject[] powerups;
 
     public GameObject levelEnd;
     private bool levelEndSpawned = false;
@@ -36,6 +37,7 @@ public class LevelManager : MonoBehaviour
         criticalHealthParticles.SetActive(false);
         zeroHealthParticles.SetActive(false);
         StartCoroutine(SpawnCars());
+        StartCoroutine(SpawnPowerups());
     }
 
     // Update is called once per frame
@@ -102,6 +104,30 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    public void Heal()
+    {
+        if (health == 1)
+        {
+            lowHealthParticles.SetActive(true);
+            criticalHealthParticles.SetActive(false);
+            zeroHealthParticles.SetActive(false);
+
+            health++;
+        }
+        else if (health <= 2)
+        {
+            lowHealthParticles.SetActive(false);
+            criticalHealthParticles.SetActive(false);
+            zeroHealthParticles.SetActive(false);
+
+            health++;
+        }
+        else
+        {
+            health++;
+        }
+    }
+
     IEnumerator SpawnCars()
     {
         yield return new WaitForSeconds(startDelay);
@@ -118,6 +144,18 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    IEnumerator SpawnPowerups()
+    {
+        yield return new WaitForSeconds(10f);
+
+        while (!gameOver && !levelEndSpawned)
+        {
+            Powerups();
+
+            yield return new WaitForSeconds(10f);
+        }
+    }
+
     public void Spawn()
     {
         //randomize what one of 5 lanes the obstacle appears in
@@ -128,5 +166,14 @@ public class LevelManager : MonoBehaviour
 
         //create new obstacle with no roatation in case of collision
         Instantiate(prefab[Random.Range(0, prefab.Length)], recyclePosition, new Quaternion());
+    }
+
+    public void Powerups()
+    {
+        int laneIndex = Random.Range(-2, 3) * 2;
+
+        Vector3 recyclePosition = new Vector3(laneIndex, 0.3f, 20);
+
+        Instantiate(powerups[Random.Range(0, powerups.Length)], recyclePosition, new Quaternion());
     }
 }

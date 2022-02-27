@@ -11,6 +11,7 @@ TagManager:
   - Effect
   - Prop
   - TutorialRoad
+  - Health
   layers:
   - Default
   - TransparentFX

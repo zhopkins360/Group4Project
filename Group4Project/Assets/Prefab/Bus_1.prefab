@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15b757837dfb16640a5e5266036ccbd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zBack: -30
+  zBack: 20
   zFront: 20
   prefab:
   - {fileID: 2008882127269439634}
