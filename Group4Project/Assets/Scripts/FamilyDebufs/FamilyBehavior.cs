@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class FamilyBehavior : MonoBehaviour
 {
+    public AudioSource playerAudio;
+    public AudioClip sonAudio;
+    public AudioClip daughterAudio;
+    public AudioClip wifeAudio;
     public float incomingVehicleSpeed;
     public bool haveSon;
     public float sonPower;

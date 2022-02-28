@@ -11,48 +11,40 @@ using UnityEngine.SceneManagement;
 
 public class LoadScene : MonoBehaviour
 {
-    //scene to be loaded when called | ONLY put scenes in this reference
-    public Object Dev;
-    public Object level1;
-    public Object level2;
-    public Object level3;
-    public Object level4;
-    public Object level5;
-    public Object mainMenu;
-
     public void LoadDevScene()
     {
         //loads scene
-        SceneManager.LoadScene(Dev.name);
+        SceneManager.LoadScene("DevScene");
     }
     public void LoadmainMenu()
     {
         //loads scene
-        SceneManager.LoadScene(mainMenu.name);
+        SceneManager.LoadScene("MainMenu");
     }
     public void LoadLevel1()
     {
+        Debug.Log("Function called");
         //loads scene
-        SceneManager.LoadScene(level1.name);
+        SceneManager.LoadScene("Level1");
     }
     public void LoadLevel2()
     {
         //loads scene
-        SceneManager.LoadScene(level2.name);
+        SceneManager.LoadScene("level2");
     }
     public void LoadLevel3()
     {
         //loads scene
-        SceneManager.LoadScene(level3.name);
+        SceneManager.LoadScene("level3");
     }
     public void LoadLevel4()
     {
         //loads scene
-        SceneManager.LoadScene(level4.name);
+        SceneManager.LoadScene("level4");
     }
     public void LoadLevel5()
     {
         //loads scene
-        SceneManager.LoadScene(level5.name);
+        SceneManager.LoadScene("level5");
     }
 }

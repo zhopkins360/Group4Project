@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4454279, g: 0.49509007, b: 0.57403755, a: 1}
+  m_IndirectSpecularColor: {r: 0.44542807, g: 0.4950903, b: 0.574038, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5360,11 +5360,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3868a6f803dc42b4ea0bbc9968e3188d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerAudio: {fileID: 156772952}
+  sonAudio: {fileID: 8300000, guid: 4d0d6749421c8f24d8bcb4a080cb5861, type: 3}
+  daughterAudio: {fileID: 8300000, guid: ab5e4514d95a9e84fa56aa4fbcf94609, type: 3}
+  wifeAudio: {fileID: 8300000, guid: 5578bbece84baca4a99a5a1166fec841, type: 3}
   incomingVehicleSpeed: 10
-  haveSon: 0
-  sonPower: 150
-  haveDaughter: 0
-  haveWife: 0
+  haveSon: 1
+  sonPower: 2
+  haveDaughter: 1
+  haveWife: 1
   wifePower: 0.75
   imagePrefabs:
   - {fileID: 9189624741263815039, guid: 29be644d7775c704a9041c74a9194d36, type: 3}
