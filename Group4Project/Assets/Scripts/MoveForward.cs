@@ -24,7 +24,7 @@ public class MoveForward : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (CompareTag("MovingObstacle") || CompareTag("Health"))
+        if (CompareTag("MovingObstacle") || CompareTag("Health") || CompareTag("Shield") || CompareTag("Note"))
         {
             speed = familyBehaviorScript.incomingVehicleSpeed;
         }

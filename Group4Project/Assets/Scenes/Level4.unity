@@ -4175,6 +4175,73 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 902199366}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &919267378
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 395469862}
+    m_Modifications:
+    - target: {fileID: 1844328801433658, guid: 0353f44cef4614b03bc1b4025819b9a5, type: 3}
+      propertyPath: m_Name
+      value: Car Shield
+      objectReference: {fileID: 0}
+    - target: {fileID: 1844328801433658, guid: 0353f44cef4614b03bc1b4025819b9a5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249589822194966, guid: 0353f44cef4614b03bc1b4025819b9a5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249589822194966, guid: 0353f44cef4614b03bc1b4025819b9a5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.643
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249589822194966, guid: 0353f44cef4614b03bc1b4025819b9a5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.362
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249589822194966, guid: 0353f44cef4614b03bc1b4025819b9a5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249589822194966, guid: 0353f44cef4614b03bc1b4025819b9a5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249589822194966, guid: 0353f44cef4614b03bc1b4025819b9a5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249589822194966, guid: 0353f44cef4614b03bc1b4025819b9a5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249589822194966, guid: 0353f44cef4614b03bc1b4025819b9a5, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249589822194966, guid: 0353f44cef4614b03bc1b4025819b9a5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249589822194966, guid: 0353f44cef4614b03bc1b4025819b9a5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249589822194966, guid: 0353f44cef4614b03bc1b4025819b9a5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0353f44cef4614b03bc1b4025819b9a5, type: 3}
+--- !u!1 &919267379 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1844328801433658, guid: 0353f44cef4614b03bc1b4025819b9a5,
+    type: 3}
+  m_PrefabInstance: {fileID: 919267378}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &961021658
 GameObject:
   m_ObjectHideFlags: 0
@@ -8316,6 +8383,7 @@ MonoBehaviour:
   - {fileID: 9189624741263815039, guid: 29be644d7775c704a9041c74a9194d36, type: 3}
   - {fileID: 7181523804831282252, guid: 539f944385b8f8845a00a08f4c834a7d, type: 3}
   - {fileID: 6299029619804237114, guid: 73be0eb2b06dd814b8673063eb89ddff, type: 3}
+  hasPowerup: 0
 --- !u!114 &1961650114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8378,8 +8446,10 @@ MonoBehaviour:
   startDelay: 0
   maxSpawnDelay: 2
   difficulty: 1
+  shieldTimer: 0
   gameOver: 0
   win: 0
+  hasShield: 0
   prefab:
   - {fileID: 2008882127269439634, guid: acaf1342a37442044947e58496608036, type: 3}
   - {fileID: 8441535318701635633, guid: 5ca08e126556a484a8c984721f7ffcca, type: 3}
@@ -8390,11 +8460,14 @@ MonoBehaviour:
   - {fileID: 4020104113263149417, guid: 6e5faef7fb775424d988e21dcc9421a1, type: 3}
   powerups:
   - {fileID: 1781561378815422, guid: 0f6fbf6ba5b56aa4ba01adc51ab77ce6, type: 3}
+  - {fileID: 1844328801433658, guid: 9867510fa3e6d11479b56ff45cf8b2ca, type: 3}
+  - {fileID: 1446064430484586, guid: 64aab82ac059b3b4e8c99af9d3bf4a26, type: 3}
   levelEnd: {fileID: 8593041164556610339, guid: e220340d379850748bbbf44f4cbcf3db,
     type: 3}
   lowHealthParticles: {fileID: 367346148}
   criticalHealthParticles: {fileID: 961630600}
   zeroHealthParticles: {fileID: 1514002821}
+  Shield: {fileID: 919267379}
 --- !u!4 &1961650116
 Transform:
   m_ObjectHideFlags: 0

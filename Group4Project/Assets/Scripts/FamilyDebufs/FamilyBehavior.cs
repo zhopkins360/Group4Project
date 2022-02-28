@@ -17,6 +17,7 @@ public class FamilyBehavior : MonoBehaviour
     
     private LevelManager levelManagerScript;
     private Rigidbody playerCar;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +40,7 @@ public class FamilyBehavior : MonoBehaviour
             StartCoroutine(WifeDebuf());
             wifeSpeed = incomingVehicleSpeed * (1 + wifePower);
         }
+
     }
 
     // Update is called once per frame
@@ -50,53 +52,59 @@ public class FamilyBehavior : MonoBehaviour
     //have wife function
     IEnumerator WifeDebuf()
     {
-        while (!levelManagerScript.gameOver)
-        {
-            float delay = Random.Range(5f,8f);
-            if (haveWife)
+       
+            while (!levelManagerScript.gameOver)
             {
-                yield return new WaitForSeconds(delay);
-                incomingVehicleSpeed = wifeSpeed;
+                float delay = Random.Range(5f, 8f);
+                if (haveWife)
+                {
+                    yield return new WaitForSeconds(delay);
+                    incomingVehicleSpeed = wifeSpeed;
+                }
+                yield return new WaitForSeconds(10f);
+                //incomingVehicleSpeed = 10;
             }
-            yield return new WaitForSeconds(10f);
-            //incomingVehicleSpeed = 10;
-        }
+        
     }
 
     //ienumerator to randomize the delay s for 
     IEnumerator SonDebuf()
     {
-        yield return new WaitForSeconds(3f);
-        while (!levelManagerScript.gameOver)
-        {
-            float delay = Random.Range(3f, 5f);
-            if (haveSon)
+       
+            yield return new WaitForSeconds(3f);
+            while (!levelManagerScript.gameOver)
             {
-                float leftOrRight = Random.Range(-1, 1);
-                if (leftOrRight < 0)
+                float delay = Random.Range(3f, 5f);
+                if (haveSon)
                 {
-                    playerCar.AddForce(Vector3.right * sonPower);
+                    float leftOrRight = Random.Range(-1, 1);
+                    if (leftOrRight < 0)
+                    {
+                        playerCar.AddForce(Vector3.right * sonPower);
+                    }
+                    else
+                    {
+                        playerCar.AddForce(Vector3.left * sonPower);
+                    }
                 }
-                else
-                {
-                    playerCar.AddForce(Vector3.left * sonPower);
-                }
+                yield return new WaitForSeconds(delay);
             }
-            yield return new WaitForSeconds(delay);
-        }
+        
     }
 
     //Calls the spawn image function and randomizes the delayes between images
     IEnumerator DaughterDebuf() 
     {
-        yield return new WaitForSeconds(Random.Range(1f,5f));
+       
+            yield return new WaitForSeconds(Random.Range(1f, 5f));
 
-        while (!levelManagerScript.gameOver)
-        {
-            float delay = Random.Range(3f, 4f);
-            SpawnImage();
-            yield return new WaitForSeconds(delay);
-        }
+            while (!levelManagerScript.gameOver)
+            {
+                float delay = Random.Range(3f, 4f);
+                SpawnImage();
+                yield return new WaitForSeconds(delay);
+            }
+        
     }
     //randomly spawns image prefab on the screen moving from one sid to the other 
     void SpawnImage()
@@ -105,4 +113,21 @@ public class FamilyBehavior : MonoBehaviour
         Vector3 spawnPos = new Vector3(Random.Range(50,650), Random.Range(100, 350), 0);
         Instantiate(imagePrefabs[randIndex], spawnPos, imagePrefabs[randIndex].transform.rotation, canvas.transform);
     }
+
+    public void stopBehaviors()
+    {
+        StopAllCoroutines();
+        Debug.Log("Stop");
+
+        Invoke("StartBehavior", 10f);
+    }
+
+    private void StartBehavior()
+    {
+        Debug.Log("Start");
+        StartCoroutine(SonDebuf());
+        StartCoroutine(DaughterDebuf());
+        StartCoroutine(WifeDebuf());
+    }
+  
 }

@@ -12,6 +12,9 @@ TagManager:
   - Prop
   - TutorialRoad
   - Health
+  - Star
+  - Shield
+  - Note
   layers:
   - Default
   - TransparentFX

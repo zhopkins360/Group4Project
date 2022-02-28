@@ -12,10 +12,10 @@ public class LevelManager : MonoBehaviour
 {
     public int health, maxHealth;
     
-    public float timeLeft, startDelay, maxSpawnDelay, difficulty;
+    public float timeLeft, startDelay, maxSpawnDelay, difficulty, shieldTimer;
     private float spawnDelay, maxTime;
 
-    public bool gameOver, win;
+    public bool gameOver, win, hasShield;
 
     public GameObject[] prefab;
     public GameObject[] powerups;
@@ -28,9 +28,13 @@ public class LevelManager : MonoBehaviour
     public GameObject criticalHealthParticles;
     public GameObject zeroHealthParticles;
 
+    public GameObject Shield;
+
     // Start is called before the first frame update
     void Start()
     {
+        shieldTimer = 15;
+        hasShield = false;
         health = maxHealth;
         maxTime = timeLeft;
         lowHealthParticles.SetActive(false);
@@ -128,6 +132,12 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    public void ShieldTime()
+    {
+        hasShield = true;
+        Shield.SetActive(true);
+    }
+
     IEnumerator SpawnCars()
     {
         yield return new WaitForSeconds(startDelay);
@@ -172,8 +182,8 @@ public class LevelManager : MonoBehaviour
     {
         int laneIndex = Random.Range(-2, 3) * 2;
 
-        Vector3 recyclePosition = new Vector3(laneIndex, 0.3f, 20);
+        Vector3 recyclePosition = new Vector3(laneIndex, 0.75f, 20);
 
-        Instantiate(powerups[Random.Range(0, powerups.Length)], recyclePosition, new Quaternion());
+        Instantiate(powerups[Random.Range(0, powerups.Length)], recyclePosition, transform.rotation);
     }
 }

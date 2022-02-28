@@ -13,6 +13,8 @@ public class OnColideWithPlayer : MonoBehaviour
 
     public GameObject Explosion;
 
+    public FamilyBehavior family;
+
     //public Obstacle rec;
 
     private void Start()
@@ -20,18 +22,28 @@ public class OnColideWithPlayer : MonoBehaviour
         //gets the script to recycle and reference level variables
         //rec = gameObject.GetComponent<Obstacle>();
         level = GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelManager>();
+        family = GameObject.FindGameObjectWithTag("GameController").GetComponent<FamilyBehavior>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         //if collide with the player
-        if (other.CompareTag("Player") && gameObject.CompareTag("MovingObstacle"))
+        if (other.CompareTag("Player") && gameObject.CompareTag("MovingObstacle") && level.hasShield == false)
         {
             //damage player
             level.Damage();
 
             Instantiate(Explosion, transform.position, Explosion.transform.rotation);
             Debug.Log("Explosion");
+
+            Destroy(gameObject);
+        }
+        else if(other.CompareTag("Player") && gameObject.CompareTag("MovingObstacle") && level.hasShield == true)
+        {
+            Instantiate(Explosion, transform.position, Explosion.transform.rotation);
+            Debug.Log("Explosion");
+            level.hasShield = false;
+            level.Shield.SetActive(false);
 
             Destroy(gameObject);
         }
@@ -45,6 +57,18 @@ public class OnColideWithPlayer : MonoBehaviour
             level.Heal();
 
             Destroy(gameObject);
+        }
+
+        else if (other.CompareTag("Player") && gameObject.CompareTag("Shield"))
+        {
+            level.ShieldTime();
+
+            Destroy(gameObject);
+        }
+
+        else if (other.CompareTag("Player") && gameObject.CompareTag("Note"))
+        {
+            family.stopBehaviors();
         }
     }
 }
