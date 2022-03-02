@@ -12,8 +12,7 @@ public class LevelManager : MonoBehaviour
 {
     public int health, maxHealth;
     
-    public float timeLeft, startDelay, maxSpawnDelay, difficulty, shieldTimer;
-    private float spawnDelay, maxTime;
+    public float timeLeft, startDelay, maxSpawnDelay, difficulty, shieldTimer, spawnDelay, maxTime;
 
     public bool gameOver, win, hasShield;
 

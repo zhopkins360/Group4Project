@@ -5,6 +5,7 @@
  */
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,7 +13,7 @@ public class UIWriter : MonoBehaviour
 {
     public Text textBox;
 
-    public Slider Health;
+    public Slider health, time;
 
     public GameObject maniMenuButton;
 
@@ -24,7 +25,9 @@ public class UIWriter : MonoBehaviour
         //gets reference to level variables and the UI textBox
         level = GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelManager>();
         textBox = gameObject.GetComponentInChildren<Text>();
-        Health = gameObject.GetComponentInChildren<Slider>();
+
+        time = GetComponentsInChildren<Slider>().FirstOrDefault(r => r.tag == "Time");
+        health = GetComponentsInChildren<Slider>().FirstOrDefault(r => r.tag == "Health");
     }
 
     // Update is called once per frame
@@ -33,19 +36,9 @@ public class UIWriter : MonoBehaviour
         //if the game is over, update the UI information
         if (!level.gameOver)
         {
-            //print time remaining
-            textBox.text = "Time left: " + level.timeLeft.ToString("F2") + "\n";
-
-            //display health / maxHealth
-            //for (int i = 0; i < level.health; i++)
-            //{
-            //    textBox.text += "<color=#ff0000ff>❤</color>";
-            //}
-            //for (int i = level.health; i < level.maxHealth; i++)
-            //{
-            //    textBox.text += "<color=#6b0000ff>❤</color>";
-            //}
-            Health.value = level.health;
+            //display time / health remaining
+            time.value =1 -(level.timeLeft / level.maxTime);
+            health.value = level.health;
         }
         else if (level.win)
         {
