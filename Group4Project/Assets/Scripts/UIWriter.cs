@@ -12,6 +12,8 @@ public class UIWriter : MonoBehaviour
 {
     public Text textBox;
 
+    public Slider Health;
+
     public GameObject maniMenuButton;
 
     public LevelManager level;
@@ -21,7 +23,8 @@ public class UIWriter : MonoBehaviour
     {
         //gets reference to level variables and the UI textBox
         level = GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelManager>();
-        textBox = gameObject.GetComponent<Text>();
+        textBox = gameObject.GetComponentInChildren<Text>();
+        Health = gameObject.GetComponentInChildren<Slider>();
     }
 
     // Update is called once per frame
@@ -34,14 +37,15 @@ public class UIWriter : MonoBehaviour
             textBox.text = "Time left: " + level.timeLeft.ToString("F2") + "\n";
 
             //display health / maxHealth
-            for (int i = 0; i < level.health; i++)
-            {
-                textBox.text += "<color=#ff0000ff>❤</color>";
-            }
-            for (int i = level.health; i < level.maxHealth; i++)
-            {
-                textBox.text += "<color=#6b0000ff>❤</color>";
-            }
+            //for (int i = 0; i < level.health; i++)
+            //{
+            //    textBox.text += "<color=#ff0000ff>❤</color>";
+            //}
+            //for (int i = level.health; i < level.maxHealth; i++)
+            //{
+            //    textBox.text += "<color=#6b0000ff>❤</color>";
+            //}
+            Health.value = level.health;
         }
         else if (level.win)
         {
