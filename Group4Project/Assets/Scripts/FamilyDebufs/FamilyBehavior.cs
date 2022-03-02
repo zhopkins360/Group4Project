@@ -10,9 +10,11 @@ public class FamilyBehavior : MonoBehaviour
     public AudioClip wifeAudio;
     public float incomingVehicleSpeed;
     public bool haveSon;
+    public bool sonActive = false;
     public float sonPower;
     public bool haveDaughter;
     public bool haveWife;
+    public bool wifeActive = false;
     public float wifePower;
     private float wifeSpeed;
     public GameObject[] imagePrefabs;
@@ -64,10 +66,12 @@ public class FamilyBehavior : MonoBehaviour
                 {
                     yield return new WaitForSeconds(delay);
                     incomingVehicleSpeed = wifeSpeed;
-                    playerAudio.PlayOneShot(wifeAudio);
+                    wifeActive = true;
+                    playerAudio.PlayOneShot(wifeAudio);    
                 }
                 yield return new WaitForSeconds(10f);
-                //incomingVehicleSpeed = 10;
+                wifeActive = false;
+                incomingVehicleSpeed = 10;
             }
         
     }
@@ -75,27 +79,28 @@ public class FamilyBehavior : MonoBehaviour
     //ienumerator to randomize the delay s for 
     IEnumerator SonDebuf()
     {
-       
             yield return new WaitForSeconds(3f);
             while (!levelManagerScript.gameOver)
             {
                 float delay = Random.Range(3f, 5f);
                 if (haveSon)
                 {
+                    sonActive = true;
                     float leftOrRight = Random.Range(-1, 1);
                     playerAudio.PlayOneShot(sonAudio);
                     if (leftOrRight < 0)
                     {
                         playerCar.AddForce(Vector3.right * sonPower, ForceMode.Impulse);
-                        yield return new WaitForSeconds(1f);
+                        yield return new WaitForSeconds(1.5f);
                         playerCar.AddForce((-1) * Vector3.right * sonPower, ForceMode.Impulse);
                     }
                     else
                     {
                         playerCar.AddForce(Vector3.left * sonPower, ForceMode.Impulse);
-                        yield return new WaitForSeconds(1f);
+                        yield return new WaitForSeconds(1.5f);
                         playerCar.AddForce((-1) * Vector3.left * sonPower, ForceMode.Impulse);
                     }
+                    sonActive = false;
                 }
                 yield return new WaitForSeconds(delay);
             }

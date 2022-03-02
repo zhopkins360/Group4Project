@@ -8815,10 +8815,12 @@ MonoBehaviour:
   wifeAudio: {fileID: 8300000, guid: 5578bbece84baca4a99a5a1166fec841, type: 3}
   incomingVehicleSpeed: 10
   haveSon: 0
+  sonActive: 0
   sonPower: 2
   haveDaughter: 0
   haveWife: 1
-  wifePower: 0.75
+  wifeActive: 0
+  wifePower: 0.8
   imagePrefabs:
   - {fileID: 9189624741263815039, guid: 29be644d7775c704a9041c74a9194d36, type: 3}
   - {fileID: 7181523804831282252, guid: 539f944385b8f8845a00a08f4c834a7d, type: 3}
