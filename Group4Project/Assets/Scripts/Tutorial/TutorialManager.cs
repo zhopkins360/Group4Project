@@ -73,9 +73,10 @@ public class TutorialManager : MonoBehaviour
         while (!Input.GetKeyDown(KeyCode.Space)) { yield return null; }
         //start "moving"
         backgroundCycle.enabled = true;
+        txtUnder.text = "<Press Space or move Arrow Keys to Continue>";
         txtOver.text = "Use the left and right arrow keys to move your car.\nTry it now!";
         yield return new WaitForSeconds(1.0f);
-        while (!Input.GetKeyDown(KeyCode.Space)) { yield return null; }
+        while (!Input.GetKeyDown(KeyCode.Space) && !Input.GetKeyDown(KeyCode.LeftArrow) && !Input.GetKeyDown(KeyCode.RightArrow)) { yield return null; }
         textOverlay.SetActive(false);
         txtUnder.text = "Use the left and right arrow keys to move your car.";
         //give player control
@@ -103,7 +104,7 @@ public class TutorialManager : MonoBehaviour
         levelManager.health = levelManager.maxHealth;
         levelManager.lowHealthParticles.SetActive(false);
         textOverlay.SetActive(true);
-        txtOver.text = "If you collide with another vehicle, you take damage, represented by the heart icons in the top left.";
+        txtOver.text = "If you collide with another vehicle, you take damage, represented by the health bar in the top left.";
         txtUnder.text = continueKey;
         while (!Input.GetKeyDown(KeyCode.Space)) { yield return null; }
         levelManager.health = 1;
@@ -116,12 +117,12 @@ public class TutorialManager : MonoBehaviour
 
         levelManager.health = levelManager.maxHealth;
         levelManager.criticalHealthParticles.SetActive(false);
-        txtOver.text = "Each level will only take a certain amount of time to complete, as shown in the top left. Survive until the end to win the level and pick up a member of your family.";
+        txtOver.text = "In each level, the Distance meter in the top left indicates your progress. Survive until the end to win the level and pick up a member of your family.";
         yield return new WaitForSeconds(1.0f);
         //decrement time until the player presses space to continue
         while (!Input.GetKeyDown(KeyCode.Space))
         {
-            levelManager.timeLeft -= Time.deltaTime;
+            //levelManager.timeLeft -= Time.deltaTime;
             yield return null;
         }
         levelManager.timeLeft = 60;
