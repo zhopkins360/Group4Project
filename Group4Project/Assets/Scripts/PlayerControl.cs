@@ -18,6 +18,8 @@ public class PlayerControl : MonoBehaviour
 
     public GameObject wifeModel, sonModel, daughterModel;
 
+    public ParticleSystem sonEffect, wifeEffect;
+
     //for debug below
     //public GameObject[] prefab;
 
@@ -27,6 +29,8 @@ public class PlayerControl : MonoBehaviour
     {
         familyBehaviorScript = GameObject.FindGameObjectWithTag("GameController").GetComponent<FamilyBehavior>();
         level = GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelManager>();
+        sonEffect = sonModel.GetComponentInChildren<ParticleSystem>();
+        wifeEffect = wifeModel.GetComponentInChildren<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -57,7 +61,27 @@ public class PlayerControl : MonoBehaviour
         }
 
         wifeModel.SetActive(familyBehaviorScript.haveWife);
+        if (familyBehaviorScript.wifeActive)
+        {
+            wifeEffect.Play();
+        }
+        else
+        {
+            wifeEffect.Pause();
+            wifeEffect.Clear();
+        }
+
         sonModel.SetActive(familyBehaviorScript.haveSon);
+        if (familyBehaviorScript.sonActive)
+        {
+            sonEffect.Play();
+        }
+        else
+        {
+            sonEffect.Pause();
+            sonEffect.Clear();
+        }
+
         daughterModel.SetActive(familyBehaviorScript.haveDaughter);
 
         //Debug summon cars
