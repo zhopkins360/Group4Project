@@ -2149,8 +2149,8 @@ MonoBehaviour:
   - {fileID: 395469864}
   - {fileID: 395469863}
   level: {fileID: 0}
-  wifeModel: {fileID: 0}
-  sonModel: {fileID: 0}
+  wifeModel: {fileID: 447854015}
+  sonModel: {fileID: 515665574}
   daughterModel: {fileID: 493330310}
   sonEffect: {fileID: 0}
   wifeEffect: {fileID: 0}
