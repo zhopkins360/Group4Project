@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public float speed;
+    public float speed, mouseSensitivity = 500f;
 
     private Rigidbody player;
 
-    private float mouseX, mouseSensitivity = 200f;
+    private float mouseX;
 
     // Start is called before the first frame update
     void Start()
