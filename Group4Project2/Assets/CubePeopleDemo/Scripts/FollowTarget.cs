@@ -61,8 +61,8 @@ namespace CubePeople
 
         void LookAtTarget()
         {
-            targetRotation = Quaternion.LookRotation(target.position - transform.position);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, turnSpeed * Time.deltaTime);
+            //targetRotation = Quaternion.LookRotation(target.position - transform.position);
+            //transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, turnSpeed * Time.deltaTime);
         }
 
         void LookatRotation()
