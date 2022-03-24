@@ -20,11 +20,17 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        player.AddRelativeForce(Vector3.forward * Input.GetAxis("Vertical") * speed);
+        player.AddRelativeForce(Input.GetAxis("Vertical")
+                                * speed
+                                * Vector3.forward);
 
-        player.AddRelativeForce(Vector3.right * Input.GetAxis("Horizontal") * speed);
+        player.AddRelativeForce(Input.GetAxis("Horizontal")
+                                * speed
+                                * Vector3.right);
 
-        mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+        mouseX = Input.GetAxis("Mouse X")
+                 * mouseSensitivity
+                 * Time.deltaTime;
 
         transform.Rotate(Vector3.up * mouseX);
     }
