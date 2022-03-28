@@ -1392,7 +1392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 40
-  mouseSensitivity: 200
+  mouseSensitivity: 600
 --- !u!114 &1614269669758092
 MonoBehaviour:
   m_ObjectHideFlags: 0
