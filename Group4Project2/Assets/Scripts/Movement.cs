@@ -28,7 +28,9 @@ public class Movement : MonoBehaviour
                                 * speed
                                 * Vector3.right);
 
-        mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+        mouseX = Input.GetAxis("Mouse X")
+                 * mouseSensitivity
+                 * Time.deltaTime;
 
         transform.Rotate(Vector3.up * mouseX);
 
