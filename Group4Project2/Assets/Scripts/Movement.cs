@@ -31,5 +31,10 @@ public class Movement : MonoBehaviour
         mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
 
         transform.Rotate(Vector3.up * mouseX);
+
+        if (Input.GetKey(KeyCode.E))
+        {
+            Collider[] interactables = Physics.OverlapSphere(transform.position, 5);
+        }
     }
 }
