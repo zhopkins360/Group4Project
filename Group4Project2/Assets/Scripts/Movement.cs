@@ -34,7 +34,32 @@ public class Movement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.E))
         {
-            Collider[] interactables = Physics.OverlapSphere(transform.position, 5);
+            doInteraction();
+        }
+    }
+
+    private void doInteraction()
+    {
+        //finds all colliders in an area
+        Collider[] interactables = Physics.OverlapSphere(transform.position, 5);
+        GameObject interaction = null;
+        float minDist = float.MaxValue;
+
+        //itterates through all things in range to find the closest intreractable object
+        foreach (Collider i in interactables)
+        {
+            float distance = Vector3.Distance(transform.position, i.gameObject.transform.position);
+            if (distance < minDist && i.GetComponent<Interactables>() != null)
+            {
+                interaction = i.gameObject;
+                minDist = distance;
+            }
+        }
+
+        //checks if an interactable object was found and interacts with it if it can be
+        if (interaction != null)
+        {
+            interaction.GetComponent<Interactables>().Interact();
         }
     }
 }
