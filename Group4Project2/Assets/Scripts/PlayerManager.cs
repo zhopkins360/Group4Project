@@ -7,7 +7,7 @@ public class PlayerManager : MonoBehaviour
 {
     public int maxNumberOfActions = 3;
     public Slider actionBar;
-    public Item[] backPack;
+    public Collectable[] backPack;
     GameObject Inventory;
     // Start is called before the first frame update
     void Start()
