@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Collectable : Interactables
 {
+    public bool inBackPack;
 
     public override void Interact()
     {
