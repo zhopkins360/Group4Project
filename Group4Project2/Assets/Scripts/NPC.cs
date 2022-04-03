@@ -29,7 +29,7 @@ public class NPC : Interactables
     public IEnumerator Talk(int status)
     {
         //sets the speech text
-        SpeechText.text = Sentances[status];
+        SpeechText.text = "<b>" + label + "</b>\n" + Sentances[status];
 
         //shows speech bubble
         Speech.SetActive(true);

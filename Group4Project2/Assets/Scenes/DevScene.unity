@@ -3582,6 +3582,10 @@ PrefabInstance:
       propertyPath: m_FontData.m_Alignment
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4696932760843480863, guid: a3fdcd579bebadf4f90f2f0f8e9a89f6, type: 3}
+      propertyPath: label
+      value: TestNPC
+      objectReference: {fileID: 0}
     - target: {fileID: 6574607217384427313, guid: a3fdcd579bebadf4f90f2f0f8e9a89f6, type: 3}
       propertyPath: m_Name
       value: TestNPC

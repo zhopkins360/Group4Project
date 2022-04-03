@@ -23,11 +23,11 @@ public class PlayerManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            useAction();
+            UseAction();
         }
         if (Input.GetKeyDown(KeyCode.L))
         {
-            resetActions();
+            ResetActions();
         }
         if (Input.GetKeyDown(KeyCode.I))
         {
@@ -36,19 +36,19 @@ public class PlayerManager : MonoBehaviour
     }
 
     //Code for interacting with the players stamina 
-    public void useAction()
+    public void UseAction()
     {
         actionBar.value -= 1;
     }
 
-    public void resetActions()
+    public void ResetActions()
     {
         actionBar.value = maxNumberOfActions;
     }
 
 
     //code for interacting with the player back pack
-    public void pickUpItem()
+    public void PickUpItem()
     {
         int freeIndex = -1;
         for(int i = 0; i < backPack.Length; i++)
@@ -61,7 +61,7 @@ public class PlayerManager : MonoBehaviour
 
     }
 
-    public void dropItem(int id)
+    public void DropItem(int id)
     {
 
     }
