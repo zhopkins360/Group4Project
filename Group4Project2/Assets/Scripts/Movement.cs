@@ -10,11 +10,14 @@ public class Movement : MonoBehaviour
 
     private float mouseX;
 
+    [SerializeField]private GameObject backpack;
+
     // Start is called before the first frame update
     void Start()
     {
         player = gameObject.GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
+        backpack.SetActive(false);
     }
 
     // Update is called once per frame
@@ -36,11 +39,13 @@ public class Movement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.E))
         {
-            doInteraction();
+            DoInteraction();
         }
+        
+        backpack.SetActive(Input.GetKey(KeyCode.R));
     }
 
-    private void doInteraction()
+    private void DoInteraction()
     {
         //finds all colliders in an area
         Collider[] interactables = Physics.OverlapSphere(transform.position, 5);

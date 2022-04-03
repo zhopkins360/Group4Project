@@ -2255,6 +2255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 40
   mouseSensitivity: 600
+  backpack: {fileID: 1786982006}
 --- !u!114 &1614269669758092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3632,6 +3633,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6574607217384427324, guid: a3fdcd579bebadf4f90f2f0f8e9a89f6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6574607217893442678, guid: a3fdcd579bebadf4f90f2f0f8e9a89f6, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
