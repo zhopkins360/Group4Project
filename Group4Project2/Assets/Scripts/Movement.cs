@@ -10,7 +10,8 @@ public class Movement : MonoBehaviour
 
     private float mouseX;
 
-    [SerializeField]private GameObject backpack;
+    [SerializeField]
+    private GameObject backpack;
 
     // Start is called before the first frame update
     void Start()
