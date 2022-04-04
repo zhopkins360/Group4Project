@@ -42,8 +42,11 @@ public class Movement : MonoBehaviour
         {
             DoInteraction();
         }
-        
-        backpack.SetActive(Input.GetKey(KeyCode.R));
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            backpack.SetActive(!backpack.activeSelf);
+        }
     }
 
     private void DoInteraction()
