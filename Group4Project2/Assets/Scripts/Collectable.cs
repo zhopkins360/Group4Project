@@ -5,6 +5,7 @@ using UnityEngine;
 public class Collectable : Interactables
 {
     public bool inBackPack;
+    public int ID;
 
     public override void Interact()
     {
@@ -14,11 +15,12 @@ public class Collectable : Interactables
 
     public void Collect()
     {
-        //adds item to inventory
+        inBackPack = true;
+        gameObject.SetActive(false);
     }
 
     public void Remove()
     {
-        //removes item from inventory
+        inBackPack = false;
     }
 }

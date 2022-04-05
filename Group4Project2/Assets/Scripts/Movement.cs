@@ -38,7 +38,7 @@ public class Movement : MonoBehaviour
 
         transform.Rotate(Vector3.up * mouseX);
 
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             DoInteraction();
         }
