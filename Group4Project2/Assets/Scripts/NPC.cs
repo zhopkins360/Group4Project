@@ -7,7 +7,7 @@ public class NPC : Interactables
 {
     [SerializeField] private GameObject Speech; private Text SpeechText;
 
-    [SerializeField] private int NPCState = 0;
+    private int NPCState = 0;
 
     //array of statements to be displayed when interacted with
     public string[] Sentances;
@@ -17,6 +17,8 @@ public class NPC : Interactables
         SpeechText = Speech.GetComponentInChildren<Text>();
 
         Speech.SetActive(false);
+
+
     }
 
     public override void Interact()
@@ -39,5 +41,15 @@ public class NPC : Interactables
 
         //hides speech bubble
         Speech.SetActive(false);
+    }
+
+    public int getState()
+    {
+        return NPCState;
+    }
+
+    public void advanceState()
+    {
+        NPCState++;
     }
 }
