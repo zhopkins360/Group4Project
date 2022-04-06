@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerManager : MonoBehaviour
+public class PlayerManager : Singleton<PlayerManager>
 {
     public int maxNumberOfActions = 3;
     public Slider actionBar;
-    public Collectable[] backPack;
     GameObject Inventory;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,25 +44,5 @@ public class PlayerManager : MonoBehaviour
     public void ResetActions()
     {
         actionBar.value = maxNumberOfActions;
-    }
-
-
-    //code for interacting with the player back pack
-    public void PickUpItem()
-    {
-        int freeIndex = -1;
-        for(int i = 0; i < backPack.Length; i++)
-        {
-            if(backPack[i] == null)
-            {
-                freeIndex = i;
-            }
-        }
-
-    }
-
-    public void DropItem(int id)
-    {
-
     }
 }

@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class PlayerActions : MonoBehaviour
 {
     public float speed, mouseSensitivity;
 
     private Rigidbody player;
 
     private float mouseX;
+
+    private PlayerManager manager;
 
     [SerializeField]
     private GameObject backpack;
@@ -19,6 +21,8 @@ public class Movement : MonoBehaviour
         player = gameObject.GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
         backpack.SetActive(false);
+
+        manager = GetComponent<PlayerManager>();
     }
 
     // Update is called once per frame
@@ -71,6 +75,7 @@ public class Movement : MonoBehaviour
         if (interaction != null)
         {
             interaction.GetComponent<Interactables>().Interact();
+            manager.UseAction();
         }
     }
 }
