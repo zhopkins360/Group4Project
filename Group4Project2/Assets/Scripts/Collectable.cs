@@ -7,6 +7,11 @@ public class Collectable : Interactables
     public bool inBackPack;
     public int ID;
 
+    private void Awake()
+    {
+        outlines = GetComponents<cakeslice.Outline>();
+    }
+
     public override void Interact()
     {
         //On interact collect item

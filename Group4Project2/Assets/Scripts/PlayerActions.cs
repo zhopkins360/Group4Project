@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerActions : MonoBehaviour
 {
-    public float speed, mouseSensitivity;
+    public float speed, mouseSensitivity, interactionDist;
 
     private Rigidbody player;
 
@@ -42,9 +42,20 @@ public class PlayerActions : MonoBehaviour
 
         transform.Rotate(Vector3.up * mouseX);
 
+        //finds all colliders in an area
+        Collider[] interactables = Physics.OverlapSphere(transform.position, interactionDist);
+
+        foreach (Collider item in interactables)
+        {
+            if (item.GetComponent<Interactables>() != null)
+            {
+                item.GetComponent<Interactables>().isHighlighted = true;
+            }
+        }
+
         if (Input.GetKeyDown(KeyCode.E))
         {
-            DoInteraction();
+            DoInteraction(interactables);
         }
 
         if (Input.GetKeyDown(KeyCode.R))
@@ -53,10 +64,8 @@ public class PlayerActions : MonoBehaviour
         }
     }
 
-    private void DoInteraction()
+    private void DoInteraction(Collider[] interactables)
     {
-        //finds all colliders in an area
-        Collider[] interactables = Physics.OverlapSphere(transform.position, 5);
         GameObject interaction = null;
         float minDist = float.MaxValue;
 
