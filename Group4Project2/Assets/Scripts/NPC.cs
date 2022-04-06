@@ -18,7 +18,7 @@ public class NPC : Interactables
 
         Speech.SetActive(false);
 
-
+        outlines = GetComponentsInChildren<cakeslice.Outline>();
     }
 
     public override void Interact()
