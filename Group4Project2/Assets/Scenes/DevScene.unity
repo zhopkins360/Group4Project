@@ -771,7 +771,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &791897516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1681,7 +1681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75f76cf52fdb6024c96e155a3c204064, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxNumberOfActions: 3
+  maxNumberOfActions: 10
   actionBar: {fileID: 0}
 --- !u!1 &1647543707877454
 GameObject:
@@ -3097,6 +3097,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 65515477, guid: a3fdcd579bebadf4f90f2f0f8e9a89f6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 65515482, guid: a3fdcd579bebadf4f90f2f0f8e9a89f6, type: 3}
       propertyPath: m_Camera
       value: 
