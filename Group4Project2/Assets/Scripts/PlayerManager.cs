@@ -7,12 +7,10 @@ public class PlayerManager : Singleton<PlayerManager>
 {
     public int maxNumberOfActions = 3;
     public Slider actionBar;
-    GameObject Inventory;
 
     // Start is called before the first frame update
     void Start()
     {
-        Inventory = GameObject.FindGameObjectWithTag("Inventory");
         actionBar = GameObject.FindGameObjectWithTag("ActionBar").GetComponent<Slider>();
         actionBar.maxValue = maxNumberOfActions;
         actionBar.value = maxNumberOfActions;
@@ -28,10 +26,6 @@ public class PlayerManager : Singleton<PlayerManager>
         if (Input.GetKeyDown(KeyCode.L))
         {
             ResetActions();
-        }
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            Inventory.SetActive(!Inventory.activeSelf);
         }
     }
 
