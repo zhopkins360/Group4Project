@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ActionBar
   - Inventory
+  - BlackOut
   layers:
   - Default
   - TransparentFX

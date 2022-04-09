@@ -83,8 +83,8 @@ public class PlayerActions : MonoBehaviour
         //checks if an interactable object was found and interacts with it if it can be
         if (interaction != null)
         {
-            interaction.GetComponent<Interactables>().Interact();
             manager.UseAction();
+            interaction.GetComponent<Interactables>().Interact();
         }
     }
 }

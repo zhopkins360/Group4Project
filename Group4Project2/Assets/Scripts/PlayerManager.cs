@@ -5,12 +5,15 @@ using UnityEngine.UI;
 
 public class PlayerManager : Singleton<PlayerManager>
 {
+    public int Day;
     public int maxNumberOfActions = 3;
     public Slider actionBar;
+    public Text dayCounter;
 
     // Start is called before the first frame update
     void Start()
     {
+        Day = 1;
         actionBar = GameObject.FindGameObjectWithTag("ActionBar").GetComponent<Slider>();
         actionBar.maxValue = maxNumberOfActions;
         actionBar.value = maxNumberOfActions;
@@ -19,6 +22,7 @@ public class PlayerManager : Singleton<PlayerManager>
     // Update is called once per frame
     void Update()
     {
+        dayCounter.text = "Day : " + Day;
         if (Input.GetKeyDown(KeyCode.P))
         {
             UseAction();
