@@ -10,6 +10,11 @@ public class Collectable : Interactables
     private void Awake()
     {
         outlines = GetComponents<cakeslice.Outline>();
+
+        if (outlines == null)
+        {
+            outlines = GetComponentsInChildren<cakeslice.Outline>();
+        }
     }
 
     public override void Interact()

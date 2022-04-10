@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 65515481}
   - component: {fileID: 65515480}
   - component: {fileID: 65515479}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: 'SpeechBubble '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 1740189306}
   - component: {fileID: 1740189308}
   - component: {fileID: 1740189307}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Speech
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 2080002182}
   - component: {fileID: 2080002184}
   - component: {fileID: 2080002183}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -650,7 +650,7 @@ GameObject:
   - component: {fileID: 4696932760843480863}
   m_Layer: 0
   m_Name: TestNPC
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -736,6 +736,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   label: TestNPC
+  isHighlighted: 0
   Speech: {fileID: 65515477}
   Sentances:
   - This is a test! I hope you can see this!

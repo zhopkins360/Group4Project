@@ -30,8 +30,15 @@ public class NPC : Interactables
     //triggers display of the current response depending on status
     public IEnumerator Talk(int status)
     {
-        //sets the speech text
-        SpeechText.text = "<b>" + label + "</b>\n" + Sentances[status];
+        if (status < Sentances.Length)
+        {
+            //sets the speech text
+            SpeechText.text = "<b>" + label + "</b>\n" + Sentances[status];
+        }
+        else
+        {
+            SpeechText.text = "<b>" + label + "</b>\n" + "Current status does not have any text associated with it. Status #: " + status;
+        }
 
         //shows speech bubble
         Speech.SetActive(true);
