@@ -42,7 +42,6 @@ public class Door : Interactables
         fadeOut = true;
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         if (fadeIn)
