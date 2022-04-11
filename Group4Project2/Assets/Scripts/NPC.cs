@@ -50,12 +50,12 @@ public class NPC : Interactables
         Speech.SetActive(false);
     }
 
-    public int getState()
+    public int GetState()
     {
         return NPCState;
     }
 
-    public void advanceState()
+    public void AdvanceState()
     {
         NPCState++;
     }

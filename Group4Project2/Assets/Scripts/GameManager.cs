@@ -50,7 +50,14 @@ public class GameManager : Singleton<GameManager>
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            Pause();
+            if (pauseMenu.activeSelf)
+            {
+                unPause();
+            }
+            else
+            {
+                Pause();
+            }
         }
     }
 

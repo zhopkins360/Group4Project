@@ -9,14 +9,25 @@ public class Door : Interactables
     public bool fadeIn = false;
     public bool fadeOut = false;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
+        outlines = GetComponents<cakeslice.Outline>();
+
+        if (outlines == null)
+        {
+            outlines = GetComponentsInChildren<cakeslice.Outline>();
+        }
+
         playerManager = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>();
         blackout = GameObject.FindGameObjectWithTag("BlackOut").GetComponent<CanvasGroup>();
     }
 
     public override void Interact()
+    {
+        NextDay();
+    }
+
+    public void NextDay()
     {
         StartCoroutine(BlackoutScreen());
         playerManager.ResetActions();
@@ -32,7 +43,7 @@ public class Door : Interactables
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (fadeIn)
         {
