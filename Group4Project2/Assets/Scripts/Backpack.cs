@@ -64,7 +64,7 @@ public class Backpack : Singleton<Backpack>
             else
             {
                 //set buttons color to show it has been picked up
-                slots[i].GetComponent<Image>().color = new Color(100, 100, 100, 200);
+                //slots[i].GetComponent<Image>().color = new Color(50, 50, 50, 200);
             }
         }
     }
