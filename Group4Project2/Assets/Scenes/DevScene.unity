@@ -1167,6 +1167,7 @@ MonoBehaviour:
     like these.
   - You got one? Thanks so much!
   - Thanks again for the burger. At least I don't feel quite so sad anymore.
+  wantedItem: {fileID: 0}
 --- !u!1 &607142205
 GameObject:
   m_ObjectHideFlags: 0
@@ -1248,6 +1249,7 @@ MonoBehaviour:
   - Have you got that <b>stapler</b> I need for my flyers?
   - There it is, thank you! I'll get started right away!
   - Once I get my flyers up, hopefully people won't be as scared.
+  wantedItem: {fileID: 1136636219947515}
 --- !u!114 &744535352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1988,6 +1990,7 @@ MonoBehaviour:
   - I'm looking for a <b>calculator</b>, remember?
   - Hey you got it! Thank you! I can't wait to start using it!
   - You should try fiddling with a calculator sometime. It's really relaxing.
+  wantedItem: {fileID: 0}
 --- !u!114 &1177300959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2053,6 +2056,7 @@ MonoBehaviour:
   - Have you got the <b>ice cream</b> yet? It's okay if you don't.
   - Thank you! This will be delicious!
   - Thanks again. You know, ice cream seems like the fitting treat for the apocalypse.
+  wantedItem: {fileID: 2137066973}
 --- !u!114 &1242143724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3263,6 +3267,7 @@ MonoBehaviour:
   - Have you got the <b>scissors</b> for my newspapers? No?
   - You got them? Great! Now I can save the best articles before the end of the world.
   - Thanks again for the scissors. I really appreciate it.
+  wantedItem: {fileID: 0}
 --- !u!1001 &1717160997
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9116,7 +9121,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1136636219947515}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.7153, y: -0.035731, z: 3.3330567}
+  m_LocalPosition: {x: 7.7153, y: 0, z: 3.3330567}
   m_LocalScale: {x: 1.7803, y: 1.7803, z: 1.7803}
   m_Children: []
   m_Father: {fileID: 0}

@@ -12,6 +12,8 @@ public class NPC : Interactables
     //array of statements to be displayed when interacted with
     public string[] Sentances;
 
+    public GameObject wantedItem;
+
     private void Awake()
     {
         SpeechText = Speech.GetComponentInChildren<Text>();
@@ -37,12 +39,17 @@ public class NPC : Interactables
         //state 3: Player has already completed request
 
         //when in certain states, energy shouldn't be used, especially since the NPC will just repeat himself
-        if (NPCState == 1 || NPCState == 3)
+        if (status == 1 || status == 3)
         {
             PlayerManager.Instance.actionBar.value += 1;
         }
 
-        //if in state 1 and player has the requested item, advance state, request is completed TODO
+        //check if wanted item is in inventory
+        if (Backpack.Instance.IsObjectInBackpack(wantedItem.GetComponent<Collectable>().ID) && status == 1)
+        {
+            NPCState = 2;
+            status = 2;
+        }
 
 
         if (status < Sentances.Length)
@@ -57,12 +64,12 @@ public class NPC : Interactables
 
         //advance states appropriately
         //if in state 0, npc has now been spoken to, advance state
-        if (NPCState == 0)
+        if (status == 0)
         {
             AdvanceState();
         }
         //if in state 2, npc has now acknowledged the fulfilled request, so advance state
-        else if (NPCState == 2)
+        else if (status == 2)
         {
             AdvanceState();
         }
