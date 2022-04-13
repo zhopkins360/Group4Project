@@ -5,15 +5,23 @@ using UnityEngine.UI;
 
 public class PlayerManager : Singleton<PlayerManager>
 {
+    //current day
     public int Day;
+
+    //max number of actions to be taken in a day
     public int maxNumberOfActions = 3;
+
+    //UI references
     public Slider actionBar;
     public Text dayCounter;
 
     // Start is called before the first frame update
     void Start()
     {
+        //sets day to starting value
         Day = 1;
+
+        //finds and initialises actionbar with max actions
         actionBar = GameObject.FindGameObjectWithTag("ActionBar").GetComponent<Slider>();
         actionBar.maxValue = maxNumberOfActions;
         actionBar.value = maxNumberOfActions;
@@ -22,7 +30,10 @@ public class PlayerManager : Singleton<PlayerManager>
     // Update is called once per frame
     void Update()
     {
+        //displays current day
         dayCounter.text = "<b>Day : " + Day + "</b>\n";
+        
+        //debug commands
         if (Input.GetKeyDown(KeyCode.K))
         {
             UseAction();
@@ -32,6 +43,7 @@ public class PlayerManager : Singleton<PlayerManager>
             ResetActions();
         }
 
+        //if action bar is below half, tutorialize the day system
         if (actionBar.value < actionBar.maxValue / 2 && Day == 1)
         {
             dayCounter.text += "\nYou're getting tired,\n"

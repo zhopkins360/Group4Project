@@ -4,30 +4,42 @@ using UnityEngine;
 
 public class PlayerActions : MonoBehaviour
 {
+    //player interaction settings
     public float speed, mouseSensitivity, interactionDist;
 
+    //Rigidbody reference for player
     private Rigidbody player;
 
+    //mouse position with sensitivity
     private float mouseX;
 
+    //manager reference
     private PlayerManager manager;
 
+    //backpack reference
     [SerializeField]
     private GameObject backpack;
 
     // Start is called before the first frame update
     void Start()
     {
+        //rigidbody reference
         player = gameObject.GetComponent<Rigidbody>();
+
+        //locks mouse pointer into game
         Cursor.lockState = CursorLockMode.Locked;
+
+        //hides backpack
         backpack.SetActive(false);
 
+        //set playerManager reference
         manager = GetComponent<PlayerManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        //player movement
         player.AddRelativeForce(Input.GetAxis("Vertical")
                                 * speed
                                 * Vector3.forward);
@@ -36,6 +48,7 @@ public class PlayerActions : MonoBehaviour
                                 * speed
                                 * Vector3.right);
 
+        //get and set player rotation
         mouseX = Input.GetAxis("Mouse X")
                  * mouseSensitivity
                  * Time.deltaTime;
@@ -45,6 +58,7 @@ public class PlayerActions : MonoBehaviour
         //finds all colliders in an area
         Collider[] interactables = Physics.OverlapSphere(transform.position, interactionDist);
 
+        //if it is interactable, set as highlighted
         foreach (Collider item in interactables)
         {
             if (item.GetComponent<Interactables>() != null)
@@ -53,11 +67,13 @@ public class PlayerActions : MonoBehaviour
             }
         }
 
+        //interact on E or mouse0
         if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Mouse0))
         {
             DoInteraction(interactables);
         }
 
+        //show backpack on R
         if (Input.GetKeyDown(KeyCode.R))
         {
             backpack.SetActive(!backpack.activeSelf);
@@ -66,6 +82,7 @@ public class PlayerActions : MonoBehaviour
 
     private void DoInteraction(Collider[] interactables)
     {
+        //variables declaration
         GameObject interaction = null;
         float minDist = float.MaxValue;
 

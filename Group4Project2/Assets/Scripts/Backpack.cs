@@ -28,6 +28,7 @@ public class Backpack : Singleton<Backpack>
         //lsit all collectables in scene
         inventory = GameObject.FindObjectsOfType<Collectable>();
 
+        //array for inventory slots
         slots = new GameObject[inventory.Length];
 
         //set up backpack for each item
@@ -51,6 +52,8 @@ public class Backpack : Singleton<Backpack>
     // Update is called once per frame
     void Update()
     {
+        //itterate through 
+
         for (int i = 0; i < inventory.Length; i++)
         {
             if (inventory[i].inBackPack)
@@ -58,9 +61,15 @@ public class Backpack : Singleton<Backpack>
                 //set buttons color to show it has been picked up
                 slots[i].GetComponent<Image>().color = new Color(255, 255, 255, 255);
             }
+            else
+            {
+                //set buttons color to show it has been picked up
+                slots[i].GetComponent<Image>().color = new Color(100, 100, 100, 200);
+            }
         }
     }
 
+    //function to see if object with ID is collected
     public bool IsObjectInBackpack(int ID)
     {
         return inventory[ID].inBackPack;
