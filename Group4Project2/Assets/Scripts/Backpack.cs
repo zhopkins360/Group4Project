@@ -60,4 +60,9 @@ public class Backpack : Singleton<Backpack>
             }
         }
     }
+
+    public bool IsObjectInBackpack(int ID)
+    {
+        return inventory[ID].inBackPack;
+    }
 }

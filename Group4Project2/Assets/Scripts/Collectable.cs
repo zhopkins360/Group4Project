@@ -11,7 +11,7 @@ public class Collectable : Interactables
     {
         outlines = GetComponents<cakeslice.Outline>();
 
-        if (outlines == null)
+        if (outlines.Length == 0)
         {
             outlines = GetComponentsInChildren<cakeslice.Outline>();
         }

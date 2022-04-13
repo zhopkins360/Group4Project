@@ -19,8 +19,12 @@ public class FaceMovement : MonoBehaviour
             movement = (transform.position - prevPos).normalized;
             prevPos = transform.position;
         }
+
+        movement.y = 0;
         //movement = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        transform.LookAt(transform.position + movement, Vector3.up);
+        transform.LookAt((transform.position + movement), Vector3.up);
+
+        //var rotation = Quaternion.LookRotation(movement);
 
     }
 }
