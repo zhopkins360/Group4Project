@@ -15,7 +15,7 @@ public class Backpack : Singleton<Backpack>
     //slot prefab
     [SerializeField]
     private GameObject backpackItemPrefab;
-    
+
     //where to add slots
     private GameObject backpackSlotParent;
 

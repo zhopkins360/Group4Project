@@ -103,7 +103,8 @@ namespace cakeslice
 			else
 				return outline1Material;
 		}
-		List<Material> materialBuffer = new List<Material>();
+
+        readonly List<Material> materialBuffer = new List<Material>();
 		Material CreateMaterial(Color emissionColor)
 		{
 			Material m = new Material(outlineBufferShader);

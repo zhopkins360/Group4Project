@@ -40,7 +40,7 @@ public class GameManager : Singleton<GameManager>
     }
 
 
-    public void unPause()
+    public void UnPause()
     {
         Time.timeScale = 1f;
         pauseMenu.SetActive(false);
@@ -52,7 +52,7 @@ public class GameManager : Singleton<GameManager>
         {
             if (pauseMenu.activeSelf)
             {
-                unPause();
+                UnPause();
             }
             else
             {

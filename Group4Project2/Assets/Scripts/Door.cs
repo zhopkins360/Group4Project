@@ -42,6 +42,7 @@ public class Door : Interactables
         fadeOut = true;
     }
 
+
     void FixedUpdate()
     {
         if (fadeIn)

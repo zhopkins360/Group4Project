@@ -18,7 +18,7 @@ public class Singleton<T> : MonoBehaviour where T : Singleton<T>
 
     protected virtual void Awake()
     {
-        if(instance != null)
+        if (instance != null)
         {
             Debug.LogError("[Singleton] Attempted to create second instance of singleton");
         }
@@ -28,7 +28,7 @@ public class Singleton<T> : MonoBehaviour where T : Singleton<T>
         }
     }
 
-    protected virtual void onDestroy()
+    protected virtual void OnDestroy()
     {
         if (instance == this)
         {

@@ -22,14 +22,21 @@ public class PlayerManager : Singleton<PlayerManager>
     // Update is called once per frame
     void Update()
     {
-        dayCounter.text = "Day : " + Day;
-        if (Input.GetKeyDown(KeyCode.P))
+        dayCounter.text = "<b>Day : " + Day + "</b>\n";
+        if (Input.GetKeyDown(KeyCode.K))
         {
             UseAction();
         }
         if (Input.GetKeyDown(KeyCode.L))
         {
             ResetActions();
+        }
+
+        if (actionBar.value < actionBar.maxValue / 2 && Day == 1)
+        {
+            dayCounter.text += "\nYou're getting tired,\n"
+                               + "try going to your house\n"
+                               + "where you started";
         }
     }
 

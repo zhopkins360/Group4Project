@@ -55,7 +55,7 @@ namespace cakeslice
 
 		void OnDisable()
 		{
-			OutlineEffect.Instance?.RemoveOutline(this);
+            OutlineEffect.Instance?.RemoveOutline(this);
 		}
 
 		private Material[] _SharedMaterials;
