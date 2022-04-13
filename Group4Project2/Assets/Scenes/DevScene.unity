@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1111,11 +1111,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 16
+    m_FontSize: 13
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
-    m_MaxSize: 40
+    m_MaxSize: 143
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1160,7 +1160,13 @@ MonoBehaviour:
   label: NPC
   isHighlighted: 0
   Speech: {fileID: 1436035703}
-  Sentances: []
+  Sentances:
+  - Oh hello. Do you mind doing me a favor? See if you can't get me a <b>hamburger</b>
+    from somewhere.
+  - Have you got me a <b>hamburger</b> yet? It's my favorite food in stressful times
+    like these.
+  - You got one? Thanks so much!
+  - Thanks again for the burger. At least I don't feel quite so sad anymore.
 --- !u!1 &607142205
 GameObject:
   m_ObjectHideFlags: 0
@@ -1236,7 +1242,12 @@ MonoBehaviour:
   label: NPC
   isHighlighted: 0
   Speech: {fileID: 1390507857}
-  Sentances: []
+  Sentances:
+  - I'm trying to put up flyers around town but don't have a <b>stapler</b>! Could
+    you grab me one?
+  - Have you got that <b>stapler</b> I need for my flyers?
+  - There it is, thank you! I'll get started right away!
+  - Once I get my flyers up, hopefully people won't be as scared.
 --- !u!114 &744535352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1446,7 +1457,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 16
+    m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -1971,7 +1982,12 @@ MonoBehaviour:
   label: NPC
   isHighlighted: 0
   Speech: {fileID: 1535190329}
-  Sentances: []
+  Sentances:
+  - Hey, do you know what would calm me right now? A <b>calculator</b>. I've lost
+    mine. Could you find one for me?
+  - I'm looking for a <b>calculator</b>, remember?
+  - Hey you got it! Thank you! I can't wait to start using it!
+  - You should try fiddling with a calculator sometime. It's really relaxing.
 --- !u!114 &1177300959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2031,7 +2047,12 @@ MonoBehaviour:
   label: NPC
   isHighlighted: 0
   Speech: {fileID: 1437396665}
-  Sentances: []
+  Sentances:
+  - You know what I haven't had in years? Some <b>ice cream</b>. Could you get me
+    some?
+  - Have you got the <b>ice cream</b> yet? It's okay if you don't.
+  - Thank you! This will be delicious!
+  - Thanks again. You know, ice cream seems like the fitting treat for the apocalypse.
 --- !u!114 &1242143724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2997,7 +3018,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 16
+    m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -3217,7 +3238,12 @@ MonoBehaviour:
   label: NPC
   isHighlighted: 0
   Speech: {fileID: 320518005}
-  Sentances: []
+  Sentances:
+  - Hey. I've been collecting newpapers and remembering better times. Could you get
+    me some <b>scissors</b>?
+  - Have you got the <b>scissors</b> for my newspapers? No?
+  - You got them? Great! Now I can save the best articles before the end of the world.
+  - Thanks again for the scissors. I really appreciate it.
 --- !u!1001 &1717160997
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11969,6 +11995,22 @@ PrefabInstance:
     - target: {fileID: 4696932760843480863, guid: a3fdcd579bebadf4f90f2f0f8e9a89f6, type: 3}
       propertyPath: isHighlighted
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4696932760843480863, guid: a3fdcd579bebadf4f90f2f0f8e9a89f6, type: 3}
+      propertyPath: Sentances.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4696932760843480863, guid: a3fdcd579bebadf4f90f2f0f8e9a89f6, type: 3}
+      propertyPath: Sentances.Array.data[1]
+      value: I am in State 1!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4696932760843480863, guid: a3fdcd579bebadf4f90f2f0f8e9a89f6, type: 3}
+      propertyPath: Sentances.Array.data[2]
+      value: I am in State 2!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4696932760843480863, guid: a3fdcd579bebadf4f90f2f0f8e9a89f6, type: 3}
+      propertyPath: Sentances.Array.data[3]
+      value: I am in State 3!
       objectReference: {fileID: 0}
     - target: {fileID: 6574607217384427313, guid: a3fdcd579bebadf4f90f2f0f8e9a89f6, type: 3}
       propertyPath: m_Name

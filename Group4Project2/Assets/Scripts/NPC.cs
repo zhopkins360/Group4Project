@@ -30,6 +30,21 @@ public class NPC : Interactables
     //triggers display of the current response depending on status
     public IEnumerator Talk(int status)
     {
+        //states:
+        //state 0: NPC has never been spoken to
+        //state 1: NPC has since informed you of the requested item
+        //state 2: Player completes request
+        //state 3: Player has already completed request
+
+        //when in certain states, energy shouldn't be used, especially since the NPC will just repeat himself
+        if (NPCState == 1 || NPCState == 3)
+        {
+            PlayerManager.Instance.actionBar.value += 1;
+        }
+
+        //if in state 1 and player has the requested item, advance state, request is completed TODO
+
+
         if (status < Sentances.Length)
         {
             //sets the speech text
@@ -38,6 +53,18 @@ public class NPC : Interactables
         else
         {
             SpeechText.text = "<b>" + label + "</b>\n" + "Current status does not have any text associated with it. Status #: " + status;
+        }
+
+        //advance states appropriately
+        //if in state 0, npc has now been spoken to, advance state
+        if (NPCState == 0)
+        {
+            AdvanceState();
+        }
+        //if in state 2, npc has now acknowledged the fulfilled request, so advance state
+        else if (NPCState == 2)
+        {
+            AdvanceState();
         }
 
         //shows speech bubble
