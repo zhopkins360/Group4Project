@@ -82,6 +82,7 @@ public class NPC : Interactables
         //check if wanted item is in inventory
         if (Backpack.Instance.IsObjectInBackpack(wantedItem.GetComponent<Collectable>().ID) && NPCState == 1)
         {
+            PlayerManager.Instance.peopleHelped++;
             NPCState = 2;
         }
 

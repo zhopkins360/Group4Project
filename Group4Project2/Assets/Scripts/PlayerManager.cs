@@ -11,6 +11,9 @@ public class PlayerManager : Singleton<PlayerManager>
     //max number of actions to be taken in a day
     public int maxNumberOfActions = 3;
 
+    //
+    public int peopleHelped;
+
     //UI references
     public Slider actionBar;
     public Text dayCounter;
@@ -18,7 +21,8 @@ public class PlayerManager : Singleton<PlayerManager>
     // Start is called before the first frame update
     void Start()
     {
-        //sets day to starting value
+        //sets starting values
+        peopleHelped = 0;
         Day = 1;
 
         //finds and initialises actionbar with max actions

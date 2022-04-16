@@ -11,6 +11,12 @@ public class Door : Interactables
     //reference to blackout UI
     private CanvasGroup blackout;
 
+    public GameObject peopleHelped;
+    public Text helpedText;
+    public GameObject endingPic;
+    public GameObject mainmenuButtion;
+    public GameObject directionalLight;
+
     //fade bools
     public bool fadeIn = false;
     public bool fadeOut = false;
@@ -19,7 +25,7 @@ public class Door : Interactables
     {
         //set outline reference
         outlines = GetComponents<cakeslice.Outline>();
-
+        
         //if outlines are not found, look in childeren
         if (outlines.Length == 0)
         {
@@ -40,6 +46,13 @@ public class Door : Interactables
         blackout = GameObject.FindGameObjectWithTag("BlackOut").GetComponent<CanvasGroup>();
     }
 
+    public void backToMainMenu()
+    {
+        Destroy(directionalLight);
+        GameManager.Instance.UnloadLevel("DevScene");
+        GameManager.Instance.LoadLevel("MainMenu");
+    }
+
     public override void Interact()
     {
         //moves to next day if interacted with
@@ -48,13 +61,49 @@ public class Door : Interactables
 
     public void NextDay()
     {
-        //fades black and back to transition
-        StartCoroutine(BlackoutScreen());
+        if (playerManager.Day < 3)
+        {
+            //fades black and back to transition
+            StartCoroutine(BlackoutScreen());
 
-        //reset availible actions
-        playerManager.ResetActions();
+            //reset availible actions
+            playerManager.ResetActions();
 
-        //TODO: move NPCs depending on day
+            //TODO: move NPCs depending on day
+        }
+        else    
+        {
+            //starts the ending sequence
+            StartCoroutine(Ending());
+        }
+    }
+
+    IEnumerator Ending()
+    {
+        //start blackout
+        fadeIn = true;
+
+        //wait for transition
+        yield return new WaitForSeconds(1.5f);
+
+        
+        peopleHelped.SetActive(true);
+        if (playerManager.peopleHelped == 6)
+        {
+            helpedText.text = "People Helped : " + playerManager.peopleHelped + "/6";
+            yield return new WaitForSeconds(1f);
+            endingPic.SetActive(true);
+            helpedText.text = "You Helped Everyone\nThank you for playing!";
+            mainmenuButtion.SetActive(true);
+            Cursor.lockState = CursorLockMode.Confined;
+        }
+        else
+        {
+            helpedText.text = "People Helped : " + playerManager.peopleHelped + "/6 \nYou Weren't Able to help everyone. Try again and See if you can!";
+            mainmenuButtion.SetActive(true);
+            Cursor.lockState = CursorLockMode.Confined;
+        }
+
     }
 
     IEnumerator BlackoutScreen()
