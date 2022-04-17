@@ -49,6 +49,10 @@ public class GameManager : Singleton<GameManager>
 
         //show pause menu
         pauseMenu.SetActive(true);
+
+        //unlock cursor
+        Cursor.lockState = CursorLockMode.None;
+
     }
 
     public void UnPause()
@@ -58,6 +62,9 @@ public class GameManager : Singleton<GameManager>
 
         //hide the pause menu
         pauseMenu.SetActive(false);
+
+        //lock cursor
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     //called every frame
@@ -75,6 +82,13 @@ public class GameManager : Singleton<GameManager>
             {
                 Pause();
             }
+        }
+
+        //in the rare occasion the player pauses in the main menu, their cursor will be locked upon unpausing
+        //have a button 'l' to unlock it just in case
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 
