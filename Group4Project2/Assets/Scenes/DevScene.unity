@@ -1288,7 +1288,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 110, y: -80}
+  m_AnchoredPosition: {x: 110, y: -125}
   m_SizeDelta: {x: 163.5449, y: 38.086487}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &278102030
@@ -7745,7 +7745,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2123822355}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.0000040638}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 530561885}
@@ -7753,8 +7753,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -258.61, y: 162.99}
-  m_SizeDelta: {x: 183.74, y: 82.455}
+  m_AnchoredPosition: {x: -279.35, y: 174.56}
+  m_SizeDelta: {x: 142.25, y: 59.32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2123822357
 MonoBehaviour:
@@ -10014,7 +10014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb5ef27e623226c43b658b12dcf012cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 40
+  speed: 75
   mouseSensitivity: 600
   interactionDist: 2
   backpack: {fileID: 1786982006}
@@ -10031,7 +10031,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Day: 1
-  maxNumberOfActions: 10
+  maxNumberOfActions: 5
   peopleHelped: 0
   actionBar: {fileID: 0}
   dayCounter: {fileID: 2123822357}
