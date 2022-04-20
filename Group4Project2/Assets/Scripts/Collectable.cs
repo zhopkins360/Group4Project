@@ -24,8 +24,11 @@ public class Collectable : Interactables
 
     public override void Interact()
     {
-        //On interact collect item
-        Collect();
+        if (PlayerManager.Instance.Staminavalue != 0)
+        {
+            //On interact collect item
+            Collect();
+        }
     }
 
     public void Collect()

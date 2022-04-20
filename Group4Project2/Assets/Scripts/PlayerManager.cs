@@ -14,6 +14,8 @@ public class PlayerManager : Singleton<PlayerManager>
     //
     public int peopleHelped;
 
+    public float Staminavalue;
+
     //UI references
     public Slider actionBar;
     public Text dayCounter;
@@ -34,6 +36,8 @@ public class PlayerManager : Singleton<PlayerManager>
     // Update is called once per frame
     void Update()
     {
+        Staminavalue = actionBar.value;
+
         //displays current day
         dayCounter.text = "<b>Day : " + Day + "</b>\n";
         

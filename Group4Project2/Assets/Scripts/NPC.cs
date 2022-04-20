@@ -40,8 +40,10 @@ public class NPC : Interactables
     //general interaction function
     public override void Interact()
     {
-        //On interact with NPC, talk to npc in its current state
-        StartCoroutine(Talk());
+        if (PlayerManager.Instance.Staminavalue != 0) {
+            //On interact with NPC, talk to npc in its current state
+            StartCoroutine(Talk());
+        }
     }
 
     //displays text based on provided status
