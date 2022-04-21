@@ -34,6 +34,8 @@ public class PlayerActions : MonoBehaviour
 
         //set playerManager reference
         manager = GetComponent<PlayerManager>();
+
+        Physics.gravity = new Vector3(0, -30, 0);
     }
 
     private void FixedUpdate()

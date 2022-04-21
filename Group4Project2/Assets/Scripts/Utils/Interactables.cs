@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class Interactables : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public abstract class Interactables : MonoBehaviour
 
     //highlight bool
     public bool isHighlighted;
+
+    public GameObject ButtonPrompt;
 
     //outline reference, has to be an array to allow for multipart objects / multiple renderers
     protected cakeslice.Outline[] outlines;
@@ -37,6 +40,7 @@ public abstract class Interactables : MonoBehaviour
             }
         }
 
+        ButtonPrompt.SetActive(isHighlighted);
         //disable highlighted variable. If it is still in radius, it will be set back
         isHighlighted = false;
     }
