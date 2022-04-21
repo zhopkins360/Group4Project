@@ -72,7 +72,7 @@ public class PlayerActions : MonoBehaviour
         }
 
         //interact on E or mouse0
-        if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             DoInteraction(interactables);
         }
