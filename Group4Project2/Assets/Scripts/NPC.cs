@@ -81,12 +81,6 @@ public class NPC : Interactables
             PlayerManager.Instance.actionBar.value += 1;
         }
 
-        //remove item from backpack when given to NPC
-        if (NPCState == 2)
-        {
-            Backpack.Instance.removeObjectFromBackpack(wantedItem.GetComponent<Collectable>().ID);
-        }
-
         //check if wanted item is in inventory
         if (Backpack.Instance.IsObjectInBackpack(wantedItem.GetComponent<Collectable>().ID) && NPCState == 1)
         {
@@ -105,6 +99,12 @@ public class NPC : Interactables
             //reports if not found
             SpeechText.text = "<b>" + label + "</b>\n" + "Current status does not have any text associated with it. Status #: " + NPCState;
             Debug.Log("Current status does not have any text associated with it. Status #: " + NPCState);
+        }
+
+        //remove item from backpack when given to NPC
+        if (NPCState == 2)
+        {
+            Backpack.Instance.removeObjectFromBackpack(wantedItem.GetComponent<Collectable>().ID);
         }
 
         //advance states appropriately
