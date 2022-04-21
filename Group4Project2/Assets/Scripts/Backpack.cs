@@ -63,8 +63,7 @@ public class Backpack : Singleton<Backpack>
             }
             else
             {
-                //set buttons color to show it has been picked up
-                //slots[i].GetComponent<Image>().color = new Color(50, 50, 50, 200);
+
             }
         }
     }
@@ -73,5 +72,12 @@ public class Backpack : Singleton<Backpack>
     public bool IsObjectInBackpack(int ID)
     {
         return inventory[ID].inBackPack;
+    }
+
+    //removes given object from the Backpack
+    public void removeObjectFromBackpack(int ID)
+    {
+        inventory[ID].inBackPack = false;
+        Destroy(slots[ID]);
     }
 }

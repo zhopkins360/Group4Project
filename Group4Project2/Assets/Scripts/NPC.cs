@@ -81,6 +81,12 @@ public class NPC : Interactables
             PlayerManager.Instance.actionBar.value += 1;
         }
 
+        //remove item from backpack when given to NPC
+        if (NPCState == 2)
+        {
+            Backpack.Instance.removeObjectFromBackpack(wantedItem.GetComponent<Collectable>().ID);
+        }
+
         //check if wanted item is in inventory
         if (Backpack.Instance.IsObjectInBackpack(wantedItem.GetComponent<Collectable>().ID) && NPCState == 1)
         {
