@@ -106,7 +106,7 @@ public class Door : Interactables
 
     }
 
-    IEnumerator BlackoutScreen()
+    protected IEnumerator BlackoutScreen()
     {
         //initiates blackout
         fadeIn = true;
