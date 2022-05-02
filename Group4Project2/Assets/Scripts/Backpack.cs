@@ -7,7 +7,9 @@ public class Backpack : Singleton<Backpack>
 {
     //dynamic list of all collectable items
     public Collectable[] inventory;
-    private GameObject[] slots;
+
+    [HideInInspector]
+    public GameObject[] slots;
 
     //refrence to backpack UI
     private GameObject backpack;
@@ -39,7 +41,7 @@ public class Backpack : Singleton<Backpack>
 
             //create slot for the item
             GameObject newCollectable = Instantiate(backpackItemPrefab, backpackSlotParent.transform);
-            newCollectable.GetComponentInChildren<Text>().text = inventory[i].label;
+            newCollectable.GetComponentInChildren<Text>().text = "???";
 
             //add created slot to slots array
             slots[i] = newCollectable;
@@ -61,10 +63,6 @@ public class Backpack : Singleton<Backpack>
                 //set buttons color to show it has been picked up
                 slots[i].GetComponent<Image>().color = new Color(255, 255, 255, 255);
             }
-            else
-            {
-
-            }
         }
     }
 
@@ -75,9 +73,21 @@ public class Backpack : Singleton<Backpack>
     }
 
     //removes given object from the Backpack
-    public void removeObjectFromBackpack(int ID)
+    public void RemoveObjectFromBackpack(int ID)
     {
         inventory[ID].inBackPack = false;
         Destroy(slots[ID]);
+    }
+
+    public void SetSlotName(int ID)
+    {
+        if (slots[ID] != null)
+        {
+            slots[ID].GetComponentInChildren<Text>().text = inventory[ID].label;
+        }
+        else
+        {
+            Debug.Log("Wanted slot is null");
+        }
     }
 }

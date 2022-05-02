@@ -101,18 +101,28 @@ public class NPC : Interactables
             Debug.Log("Current status does not have any text associated with it. Status #: " + NPCState);
         }
 
+        //if in state 2, npc has now acknowledged the fulfilled request, so advance state
         //remove item from backpack when given to NPC
         if (NPCState == 2)
         {
-            Backpack.Instance.removeObjectFromBackpack(wantedItem.GetComponent<Collectable>().ID);
+            Backpack.Instance.RemoveObjectFromBackpack(wantedItem.GetComponent<Collectable>().ID);
+            AdvanceState();
         }
 
         //advance states appropriately
-        //if in state 0, npc has now been spoken to, advance state
-        //if in state 2, npc has now acknowledged the fulfilled request, so advance state
-        if (NPCState == 0 || NPCState == 2)
+        //if in state 0, npc has now been spoken to, advance state and name wanted item
+        if (NPCState == 0 )
         {
             AdvanceState();
+
+            if (Backpack.IsInstantilized)
+            {
+                Backpack.Instance.SetSlotName(wantedItem.GetComponent<Collectable>().ID);
+            }
+            else
+            {
+                Debug.Log("Backpack not intantialized");
+            }
         }
 
         //shows speech bubble
