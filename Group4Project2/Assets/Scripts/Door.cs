@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Door : Interactables
 {
@@ -48,9 +49,10 @@ public class Door : Interactables
 
     public void backToMainMenu()
     {
-        Destroy(directionalLight);
-        GameManager.Instance.UnloadLevel("DevScene");
-        GameManager.Instance.LoadLevel("MainMenu");
+        //Destroy(directionalLight); 
+        SceneManager.LoadScene("MainMenu");
+        SceneManager.UnloadScene("DevScene");
+        
     }
 
     public override void Interact()
