@@ -20711,10 +20711,13 @@ MonoBehaviour:
   ButtonPrompt: {fileID: 889026033}
   Speech: {fileID: 1622312620}
   Sentances:
-  - I am in State 0!
-  - I am in State 1!
-  - I am in State 2!
-  - I am in State 3!
+  - Hello! I have a simple fetch quest for you, like in those games you always played.
+    Could you get me a <b>Pizza</b>?
+  - Still waiting for you to complete my quest! Remember to get some <b>Pizza</b>
+    for me, will you?
+  - That looks delicious! I knew you could do it! I'd have done it myself but for
+    my bad knee you see
+  - I feel like a diiferent state after that great <b>Pizza</b>!
   wantedItem: {fileID: 1211720525630775217}
 --- !u!114 &6574607217187651337
 MonoBehaviour:
