@@ -25,10 +25,17 @@ public class NPC : Interactables
     //reference to the object the NPC wants
     public GameObject wantedItem;
 
+    
+    public AudioSource mainAudio;
+    public AudioClip[] audioClips;
+
+
     private void Awake()
     {
         //set reference
         SpeechText = Speech.GetComponentInChildren<Text>();
+        mainAudio = GetComponent<AudioSource>();
+
 
         //hide speech
         Speech.SetActive(false);
@@ -40,6 +47,9 @@ public class NPC : Interactables
     //general interaction function
     public override void Interact()
     {
+        int randInt = Random.Range(0, 2);
+        mainAudio.PlayOneShot(audioClips[randInt]);
+
         if (PlayerManager.Instance.Staminavalue != 0) {
             //On interact with NPC, talk to npc in its current state
             StartCoroutine(Talk());
