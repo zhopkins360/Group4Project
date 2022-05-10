@@ -10,14 +10,8 @@ public class TutorialDoor : Door
 
     public override void Interact()
     {
-        if (MainScene != null)
-        {
-            StartCoroutine(BlackoutScreen());
-            SceneManager.LoadSceneAsync(MainScene.name);
-        }
-        else
-        {
-            Debug.Log("Devscene is null");
-        }
+        string name = MainScene.name;
+        StartCoroutine(BlackoutScreen());
+        SceneManager.LoadSceneAsync(name);
     }
 }

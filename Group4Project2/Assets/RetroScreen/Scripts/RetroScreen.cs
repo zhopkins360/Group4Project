@@ -208,7 +208,7 @@ namespace NorthLab.Effects
 
             if (Initialized)
             {
-                DisplayCamera.gameObject.SetActive(false);
+                //DisplayCamera.gameObject.SetActive(false);
                 oldSettings.SetToCamera(RenderCamera);
                 StopCoroutine(coroutine);
             }
