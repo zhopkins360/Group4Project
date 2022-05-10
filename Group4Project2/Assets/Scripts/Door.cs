@@ -26,7 +26,7 @@ public class Door : Interactables
     {
         //set outline reference
         outlines = GetComponents<cakeslice.Outline>();
-        
+
         //if outlines are not found, look in childeren
         if (outlines.Length == 0)
         {
@@ -51,8 +51,8 @@ public class Door : Interactables
     {
         //Destroy(directionalLight); 
         SceneManager.LoadScene("MainMenu");
-        SceneManager.UnloadScene("DevScene");
-        
+        SceneManager.UnloadSceneAsync("DevScene");
+
     }
 
     public override void Interact()
@@ -73,7 +73,7 @@ public class Door : Interactables
 
             //TODO: move NPCs depending on day
         }
-        else    
+        else
         {
             //starts the ending sequence
             StartCoroutine(Ending());
@@ -88,7 +88,7 @@ public class Door : Interactables
         //wait for transition
         yield return new WaitForSeconds(1.5f);
 
-        
+
         peopleHelped.SetActive(true);
         if (playerManager.peopleHelped == 6)
         {
