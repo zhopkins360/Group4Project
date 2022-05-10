@@ -3171,17 +3171,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a54a428bb96505945ae17564ecc47612, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  label: 
+  label: Exit
   isHighlighted: 0
   ButtonPrompt: {fileID: 1368059186}
-  peopleHelped: {fileID: 0}
-  helpedText: {fileID: 0}
-  endingPic: {fileID: 0}
-  mainmenuButtion: {fileID: 0}
-  directionalLight: {fileID: 0}
+  MainScene: {fileID: 102900000, guid: 71543d33836cbda4c98c7dc89d185e19, type: 3}
   fadeIn: 0
   fadeOut: 0
-  MainScene: {fileID: 102900000, guid: 71543d33836cbda4c98c7dc89d185e19, type: 3}
 --- !u!1 &747452966
 GameObject:
   m_ObjectHideFlags: 0
