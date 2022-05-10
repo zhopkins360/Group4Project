@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TutorialDoor : Door
+public class TutorialDoor : Interactables
 {
     public override void Interact()
     {
