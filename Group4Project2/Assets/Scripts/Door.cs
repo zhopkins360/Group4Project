@@ -51,7 +51,7 @@ public class Door : Interactables
     {
         //Destroy(directionalLight); 
         SceneManager.LoadScene("MainMenu");
-        SceneManager.UnloadSceneAsync("DevScene");
+        SceneManager.UnloadScene("DevScene");
 
     }
 

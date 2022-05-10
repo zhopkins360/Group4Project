@@ -12,6 +12,6 @@ public class TutorialDoor : Door
     {
         string name = MainScene.name;
         StartCoroutine(BlackoutScreen());
-        SceneManager.LoadSceneAsync(name);
+        SceneManager.LoadScene("DevScene");
     }
 }
