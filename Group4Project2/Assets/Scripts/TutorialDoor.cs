@@ -7,7 +7,7 @@ public class TutorialDoor : Interactables
 {
     public override void Interact()
     {
-        StartCoroutine(BlackoutScreen());
-        SceneManager.LoadScene("DevScene", LoadSceneMode.Single);
+        //StartCoroutine(BlackoutScreen());
+        SceneManager.LoadScene("PlayScene", LoadSceneMode.Single);
     }
 }

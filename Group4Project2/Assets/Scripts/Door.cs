@@ -50,8 +50,7 @@ public class Door : Interactables
     public void backToMainMenu()
     {
         //Destroy(directionalLight); 
-        SceneManager.LoadScene("MainMenu");
-        SceneManager.UnloadScene("DevScene");
+        SceneManager.LoadScene("MainMenu",LoadSceneMode.Single);
 
     }
 
