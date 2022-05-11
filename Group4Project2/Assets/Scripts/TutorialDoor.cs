@@ -42,10 +42,6 @@ public class TutorialDoor : Interactables
 
     public override void Interact()
     {
-<<<<<<< Updated upstream
-        //StartCoroutine(BlackoutScreen());
-        SceneManager.LoadScene("PlayScene", LoadSceneMode.Single);
-=======
         StartCoroutine(BlackoutScreen());
         SceneManager.LoadScene("PlayScene", LoadSceneMode.Single);
     }
@@ -103,6 +99,5 @@ public class TutorialDoor : Interactables
                 }
             }
         }
->>>>>>> Stashed changes
     }
 }
